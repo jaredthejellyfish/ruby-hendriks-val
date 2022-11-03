@@ -1,0 +1,18 @@
+{
+    "status": 200,
+    "data": {
+      "puuid": "140479d6-a2e5-5ca2-99d5-635b4d34b66c",
+      "region": "eu",
+      "account_level": 106,
+      "name": "jaredthejelly",
+      "tag": "yours",
+      "card": {
+        "small": "https://media.valorant-api.com/playercards/4df86707-4c99-a978-5a74-ba92f157a33c/smallart.png",
+        "large": "https://media.valorant-api.com/playercards/4df86707-4c99-a978-5a74-ba92f157a33c/largeart.png",
+        "wide": "https://media.valorant-api.com/playercards/4df86707-4c99-a978-5a74-ba92f157a33c/wideart.png",
+        "id": "4df86707-4c99-a978-5a74-ba92f157a33c"
+      },
+      "last_update": "Now",
+      "last_update_raw": 1667476125
+    }
+  }
