@@ -5,7 +5,7 @@
 ### TODO:
 
 - Implement routes:
-  - [ ] Get Account Data (_GET /valorant/v1/account/:name/:tag_)
+  - [x] Get Account Data (_GET /valorant/v1/account/:name/:tag_)
   - [ ] Get MMR Data (_GET /valorant/:version/mmr/:name/:tag_)
   - [ ] Get MMR Data by PUUID (_GET /valorant/:version/by-puuid/mmr/:region/:puuid_)
   - [ ] Get MMR History (_GET /valorant/v1/mmr-history/:region/:name/:tag_)
