@@ -2,7 +2,7 @@
 
 require 'rest-client'
 require 'json'
-require_relative 'player'
+
 require_relative 'match'
 require_relative 'user'
 require_relative 'matches_history'
@@ -11,6 +11,10 @@ require_relative 'matches_history'
 class ValorantAPI
   def initialize
     @base_url = 'https://api.henrikdev.xyz/valorant/'
+  end
+
+  def account_data(name = '', tag = '')
+    User.new(fetch_resposne("v1/account/#{name}/#{tag}"))
   end
 
   def match_from_id(match_id)
