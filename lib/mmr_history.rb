@@ -1,3 +1,5 @@
+# frozen_string_literal: false
+
 require_relative 'mmr_v1'
 
 # This class is used to get the data from the mmr history

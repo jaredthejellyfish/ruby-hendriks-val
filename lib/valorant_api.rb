@@ -64,6 +64,3 @@ class ValorantAPI
     raise "Error: #{response['status']} - #{response['message']}"
   end
 end
-
-api = ValorantAPI.new
-puts api.mmr_history_by_puuid('140479d6-a2e5-5ca2-99d5-635b4d34b66c').data[0].currenttierpatched
