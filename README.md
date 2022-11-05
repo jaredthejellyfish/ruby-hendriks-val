@@ -115,7 +115,7 @@ rake user
 
 ### `account_data(name, tag)` → User
 
-Returns a `User` object:
+Returns a `User` object with instance variables:
 
 - (str) :`puuid`: The unique player identifier key.
 - (str) :`region`: The region the player is based in [regions](###Regions).
