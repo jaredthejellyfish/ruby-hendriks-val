@@ -2,10 +2,11 @@
 
 A wrapper built around the freely accessible [Hendrinks API](https://docs.henrikdev.xyz/valorant.html)
 
+---
 
 
 ## To do:
----
+
 
 - Routes:
   - [x] Get Account Data (_GET /valorant/v1/account/:name/:tag_)
@@ -46,7 +47,7 @@ A wrapper built around the freely accessible [Hendrinks API](https://docs.henrik
 - Adopt the Ruby GEM scheme
 
 ## Rake Tasks:
----
+
 Run rspec on valorant_api.rb
 ```ruby
 rake api
@@ -103,7 +104,7 @@ rake user
 ```
 
 ## Regions:
----
+
 - NA
 - EU
 - KR
@@ -111,8 +112,9 @@ rake user
 
 
 ## Documentation:
----
+
 ### account_data(name, tag)
+
 
 Returns a `User` object:
 
