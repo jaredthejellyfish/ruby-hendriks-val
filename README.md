@@ -141,19 +141,21 @@ Returns a `Match` object with instance variables:
 - (str) :`map`: 
 - (str) :`mode`: 
 - (str) :`queue`: 
-- (int) :`rounds_played`: 
 - (str) :`matchid`: 
+- (str) :`winning_team`:
+   
+- (int) :`rounds_played`: 
 - (int) :`game_length`: 
 - (int) :`game_start`: 
-- (arr) :`all_players`: 
-- (arr) :`red_team`: 
-- (arr) :`blue_team`: 
 - (int) :`num_rounds`: 
-- (str) :`winning_team`: 
 - (int) :`red_rounds_won`: 
 - (int) :`red_rounds_lost`: 
 - (int) :`blue_rounds_won`: 
 - (int) :`blue_rounds_lost`: 
+   
+- (arr) :`red_team`: 
+- (arr) :`blue_team`: 
+- (arr) :`all_players`: 
 
 To run static tests use: 
 ```sh 
