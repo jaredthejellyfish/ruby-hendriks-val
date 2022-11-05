@@ -113,13 +113,13 @@ Returns a `User` object with instance variables:
 - (str) :`region`: The region the player is based in [regions](#regions).
 - (str) :`name`: The player's name.
 - (str) :`tag`: The player's tag.
-- (int) :`account_level`: The player's account level.
+- (str) :`last_update`: The last time the server updated the data in a human readable format.
 - (hash) :`card`: 
   - (str) :`small`: Holds the url to the small version of a player's card.
   - (str) :`large`: Holds the url to the large version of a player's card.
   - (str) :`wide`: Holds the url to the wide version of a player's card.
   - (str) :`id`: Holds the id of a player's card.
-- (str) :`last_update`: The last time the server updated the data in a human readable format.
+- (int) :`account_level`: The player's account level.
 - (int) :`last_update_raw`: The last time the server updated the data in unix millis.
 
 To run static tests use: 
