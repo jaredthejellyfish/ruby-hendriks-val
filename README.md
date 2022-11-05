@@ -103,14 +103,6 @@ Run rspec on user.rb
 rake user
 ```
 
-## Regions:
-
-- NA
-- EU
-- KR
-- AP
-
-
 ## Documentation:
 
 ### `account_data(name, tag)` → User
@@ -134,3 +126,48 @@ To run static tests use:
 ```sh 
 rake api:account_data
 ```
+<hr style="border-top: 1px dashed gray; background-color: transparent;" />
+
+### `match_data(match_id)` → Match → Player
+
+Returns a `Match` object with instance variables:
+
+- (str) :`game_version`: 
+- (str) :`game_start_patched`: 
+- (str) :`season_id`: 
+- (str) :`platform`: 
+- (str) :`region`: 
+- (str) :`cluster`: 
+- (str) :`map`: 
+- (str) :`mode`: 
+- (str) :`queue`: 
+- (int) :`rounds_played`: 
+- (str) :`matchid`: 
+- (int) :`game_length`: 
+- (int) :`game_start`: 
+- (arr) :`all_players`: 
+- (arr) :`red_team`: 
+- (arr) :`blue_team`: 
+- (int) :`num_rounds`: 
+- (str) :`winning_team`: 
+- (int) :`red_rounds_won`: 
+- (int) :`red_rounds_lost`: 
+- (int) :`blue_rounds_won`: 
+- (int) :`blue_rounds_lost`: 
+
+To run static tests use: 
+```sh 
+rake api:match_data
+```
+<hr style="border-top: 1px dashed gray; background-color: transparent;" />
+
+
+
+---
+
+## Regions:
+
+- NA
+- EU
+- KR
+- AP
