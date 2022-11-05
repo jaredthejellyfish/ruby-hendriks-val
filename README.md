@@ -6,7 +6,7 @@
 
 ## To do:
 
-- Implement routes:
+- Routes:
   - [x] Get Account Data (_GET /valorant/v1/account/:name/:tag_)
   - [x] Get MMR Data (_GET /valorant/:version/mmr/:name/:tag_)
   - [x] Get MMR Data by PUUID (_GET /valorant/:version/by-puuid/mmr/:region/:puuid_)
@@ -22,9 +22,27 @@
   - [ ] Get all available offers (_GET /valorant/v1/store-offers_)
   - [ ] Get Featured Bundle (_GET /valorant/v1/store-featured_)
 
-- Implement route versions:
+- Route versions:
   - [ ] Get MMR Data (implmented v1, needs v2 & 3)
   - [ ] Get MMR Data by PUUID (implmented v1, needs v2 & 3)
+
+- Documentation
+  - [ ] Get Account Data
+  - [ ] Get MMR Data
+  - [ ] Get MMR Data by PUUID
+  - [ ] Get MMR History
+  - [ ] Get MMR History by PUUID
+  - [ ] Get Match History
+  - [ ] Get Match History by PUUID
+  - [ ] Get Match Data
+  - [ ] Get Website Articles
+  - [ ] Get Leaderboard
+  - [ ] Get Server Status
+  - [ ] Get Content
+  - [ ] Get all available offers
+  - [ ] Get Featured Bundle
+
+- Adopt the Ruby GEM scheme
 ---
 
 ## Rake Tasks:
