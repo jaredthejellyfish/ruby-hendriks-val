@@ -22,9 +22,9 @@
   - [ ] Get all available offers (_GET /valorant/v1/store-offers_)
   - [ ] Get Featured Bundle (_GET /valorant/v1/store-featured_)
 
-Implement route versions:
-- [ ] Get MMR Data (implmented v1, needs v2 & 3)
-- [ ] Get MMR Data by PUUID (implmented v1, needs v2 & 3)
+- Implement route versions:
+  - [ ] Get MMR Data (implmented v1, needs v2 & 3)
+  - [ ] Get MMR Data by PUUID (implmented v1, needs v2 & 3)
 ---
 
 ## Rake Tasks:
