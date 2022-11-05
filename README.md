@@ -118,7 +118,7 @@ rake user
 Returns a `User` object with instance variables:
 
 - (str) :`puuid`: The unique player identifier key.
-- (str) :`region`: The region the player is based in [regions](###Regions).
+- (str) :`region`: The region the player is based in [regions](#regions).
 - (str) :`name`: The player's name.
 - (str) :`tag`: The player's tag.
 - (int) :`account_level`: The player's account level.
