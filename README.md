@@ -1,6 +1,6 @@
 # rVal
 
-##### A wrapper built around the freely accessible Hendrinks API
+##### A wrapper built around the freely accessible [Hendrinks API](https://docs.henrikdev.xyz/valorant.html)
 
 ---
 
