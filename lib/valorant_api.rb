@@ -5,6 +5,7 @@ require 'json'
 require_relative 'player'
 require_relative 'match'
 require_relative 'user'
+require_relative 'matches_history'
 
 # This class is the main class of the gem. It is used to get the data from the Valorant API
 class ValorantAPI
@@ -20,6 +21,14 @@ class ValorantAPI
     Match.new(fetch_resposne("v2/match/#{match_id}"))
   end
 
+  def match_history(name = '', tag = '', region = 'eu')
+    MatcheshHistory.new(fetch_resposne("v3/matches/#{region}/#{name}/#{tag}"))
+  end
+
+  def match_history_by_puuid(puuid, region = 'eu')
+    MatcheshHistory.new(fetch_resposne("v3/by-puuid/matches/#{region}/#{puuid}"))
+  end
+
   private
 
   def fetch_resposne(endpoint)
@@ -33,6 +42,3 @@ class ValorantAPI
     raise "Error: #{response['status']} - #{response['message']}"
   end
 end
-
-api = ValorantAPI.new
-p api.match_from_id('a8237ec4-1013-4398-b3af-5d245e9d75e1')
