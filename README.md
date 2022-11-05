@@ -1,10 +1,11 @@
 # rVal
 
-##### A wrapper built around the freely accessible [Hendrinks API](https://docs.henrikdev.xyz/valorant.html)
+A wrapper built around the freely accessible [Hendrinks API](https://docs.henrikdev.xyz/valorant.html)
 
----
+
 
 ## To do:
+---
 
 - Routes:
   - [x] Get Account Data (_GET /valorant/v1/account/:name/:tag_)
@@ -43,10 +44,9 @@
   - [ ] Get Featured Bundle
 
 - Adopt the Ruby GEM scheme
----
 
 ## Rake Tasks:
-
+---
 Run rspec on valorant_api.rb
 ```ruby
 rake api
@@ -102,11 +102,29 @@ Run rspec on user.rb
 rake user
 ```
 
+## Regions:
 ---
-
-### Possible Regions:
-
 - NA
 - EU
 - KR
 - AP
+
+
+## Documentation:
+---
+### account_data(name, tag)
+
+Returns a `User` object:
+
+- (str) :`puuid`: The unique player identifier key.
+- (str) :`region`: The region the player is based in [regions](###Regions).
+- (str) :`name`: The player's name.
+- (str) :`tag`: The player's tag.
+- (int) :`account_level`: The player's account level.
+- (hash) :`card`: 
+  - (str) :`small`: Holds the url to the small version of a player's card.
+  - (str) :`large`: Holds the url to the large version of a player's card.
+  - (str) :`wide`: Holds the url to the wide version of a player's card.
+  - (str) :`id`: Holds the id of a player's card.
+- (str) :`last_update`: The last time the server updated the data in a human readable format.
+- (int) :`last_update_raw`: The last time the server updated the data in unix millis.
