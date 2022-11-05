@@ -1,15 +1,22 @@
+# frozen_string_literal: false
+
 require 'rest-client'
 require 'json'
 require_relative 'player'
 require_relative 'match'
 require_relative 'user'
 
+# This class is the main class of the gem. It is used to get the data from the Valorant API
 class ValorantAPI
   def initialize
     @base_url = 'https://api.henrikdev.xyz/valorant/'
   end
 
   def match_from_id(match_id)
+    Match.new(fetch_resposne("v2/match/#{match_id}"))
+  end
+
+  def match_data(match_id)
     Match.new(fetch_resposne("v2/match/#{match_id}"))
   end
 

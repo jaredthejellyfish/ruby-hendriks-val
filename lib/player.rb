@@ -1,3 +1,6 @@
+# frozen_string_literal: false
+
+# This class is used to get the data from the match history
 class Player
   attr_reader :puuid, :name, :tag, :team, :level, :character, :currenttier, :currenttier_patched, :party_id,
               :player_card, :player_title, :assets_card, :assets_agent, :session_playtime, :behavior, :ability_casts,

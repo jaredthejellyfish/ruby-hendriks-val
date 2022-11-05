@@ -30,7 +30,7 @@ describe Match do
     end
 
     it 'should have the correct amount of instance variables' do
-      expect(match.instance_variables.count).to eq 24
+      expect(match.instance_variables.count).to eq 25
     end
 
     it 'should have the correct instance variables' do
@@ -49,7 +49,8 @@ describe Match do
     end
 
     it 'should return the player with the highest score' do
-      expect(match.mvp.name).to eq('jaredthejelly')
+      mvp = match.all_players.max_by(&:score)
+      expect(match.mvp.name).to eq(mvp.name)
     end
   end
 
@@ -59,7 +60,8 @@ describe Match do
     end
 
     it 'should return the player with the highest score on the red team' do
-      expect(match.mvp_red.name).to eq('jaredthejelly')
+      mvp = match.red_team.max_by(&:score)
+      expect(match.mvp_red.name).to eq(mvp.name)
     end
   end
 
@@ -69,7 +71,8 @@ describe Match do
     end
 
     it 'should return the player with the highest score on the blue team' do
-      expect(match.mvp_blue.name).to eq('ブラックカイザー')
+      mvp = match.blue_team.max_by(&:score)
+      expect(match.mvp_blue.name).to eq(mvp.name)
     end
   end
 
