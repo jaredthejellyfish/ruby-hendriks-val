@@ -113,7 +113,7 @@ rake user
 
 ## Documentation:
 
-### account_data(name, tag) → User
+### `account_data(name, tag)` → User
 
 Returns a `User` object:
 
