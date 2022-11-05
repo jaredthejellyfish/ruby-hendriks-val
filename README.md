@@ -130,4 +130,7 @@ Returns a `User` object with instance variables:
 - (str) :`last_update`: The last time the server updated the data in a human readable format.
 - (int) :`last_update_raw`: The last time the server updated the data in unix millis.
 
-*To run static tests use command `rake api:account_data`.*
+To run static tests use: 
+```sh 
+rake api:account_data
+```
