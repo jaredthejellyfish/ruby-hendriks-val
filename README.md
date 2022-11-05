@@ -24,26 +24,26 @@
 ## Rake Tasks:
 
 Run rspec on match.rb
-```sh
+```ruby
   rake match
   ```
 
 Run rspec on player.rb
-```sh
+```ruby
   rake player
   ```
 
 Run rspec on user.rb
-```sh
+```ruby
   rake user
   ```
 
 Run rspec on matches_history.rb
-```sh
+```ruby
   rake history
   ```
 
 Generate file loading for single file tests
-```sh
+```ruby
   rake loader[file_name]
   ```
