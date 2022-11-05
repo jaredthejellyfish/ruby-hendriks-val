@@ -33,6 +33,10 @@ class ValorantAPI
     MatcheshHistory.new(fetch_resposne("v3/by-puuid/matches/#{region}/#{puuid}"))
   end
 
+  def server_status(region = 'eu')
+    fetch_resposne("v1/status/#{region}")['data'].transform_keys(&:to_sym)
+  end
+
   private
 
   def fetch_resposne(endpoint)
@@ -46,3 +50,7 @@ class ValorantAPI
     raise "Error: #{response['status']} - #{response['message']}"
   end
 end
+
+api = ValorantAPI.new
+puts api.server_status('latam')
+#regions 
