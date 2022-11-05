@@ -2,7 +2,7 @@
 ##### A wrapper built around the freely accessible Hendrinks API
 
 ---
-### TODO:
+## To do:
 
 - Implement routes:
   - [x] Get Account Data (_GET /valorant/v1/account/:name/:tag_)
@@ -19,3 +19,31 @@
   - [ ] Get Content (_GET /valorant/v1/content_)
   - [ ] Get all available offers (_GET /valorant/v1/store-offers_)
   - [ ] Get Featured Bundle (_GET /valorant/v1/store-featured_)
+
+---
+## Rake Tasks:
+
+Run rspec on match.rb
+```sh
+  rake match
+  ```
+
+Run rspec on player.rb
+```sh
+  rake player
+  ```
+
+Run rspec on user.rb
+```sh
+  rake user
+  ```
+
+Run rspec on matches_history.rb
+```sh
+  rake history
+  ```
+
+Generate file loading for single file tests
+```sh
+  rake loader[file_name]
+  ```
