@@ -10,66 +10,112 @@ describe ValorantAPI do
   let(:api) { ValorantAPI.new }
 
   describe '#account_data' do
+    let(:account_data) { api.account_data('jaredthejelly', 'yours') }
+
     it 'is a User object' do
-      expect(api.account_data('jaredthejelly', 'yours')).to be_a(User)
+      expect(account_data).to be_a(User)
     end
 
     it 'has a matching name, tag & region' do
-      data = api.account_data('jaredthejelly', 'yours')
-
-      expect(data.name).to eq('jaredthejelly')
-      expect(data.tag).to eq('yours')
-      expect(data.region).to eq('eu')
+      expect(account_data.name).to eq('jaredthejelly')
+      expect(account_data.tag).to eq('yours')
+      expect(account_data.region).to eq('eu')
     end
   end
 
   describe '#match_data' do
+    let(:match_data) { api.match_data('97d9ee21-71c4-4b27-805a-57cf614b89f5') }
+
     it 'is a Match object' do
-      expect(api.match_data('97d9ee21-71c4-4b27-805a-57cf614b89f5')).to be_a(Match)
+      expect(match_data).to be_a(Match)
     end
 
     it 'has a matching id' do
-      data = api.match_data('97d9ee21-71c4-4b27-805a-57cf614b89f5')
-
-      expect(data.matchid).to eq('97d9ee21-71c4-4b27-805a-57cf614b89f5')
+      expect(match_data.matchid).to eq('97d9ee21-71c4-4b27-805a-57cf614b89f5')
     end
   end
 
   describe '#match_history' do
+    let(:match_history) { api.match_history('jaredthejelly', 'yours') }
+
     it 'is a MatcheshHistory object' do
-      history = api.match_history('jaredthejelly', 'yours')
-      expect(history).to be_a(MatcheshHistory)
-      expect(history.matches[0]).to be_a(Match)
-      expect(history.matches[0].all_players[0]).to be_a(Player)
+      expect(match_history).to be_a(MatcheshHistory)
+      expect(match_history.matches[0]).to be_a(Match)
+      expect(match_history.matches[0].all_players[0]).to be_a(Player)
     end
 
     it 'contains matches' do
-      history = api.match_history('jaredthejelly', 'yours')
-      expect(history.matches.length).to be > 0
+      expect(match_history.matches.length).to be > 0
     end
 
     it 'matches contain players' do
-      history = api.match_history('jaredthejelly', 'yours')
-      expect(history.matches[0].all_players.length).to be > 0
+      expect(match_history.matches[0].all_players.length).to be > 0
     end
   end
 
   describe '#match_history_by_puuid' do
+    let(:match_histor_puuid) { api.match_history_by_puuid('140479d6-a2e5-5ca2-99d5-635b4d34b66c') }
     it 'is a MatcheshHistory object' do
-      history = api.match_history_by_puuid('140479d6-a2e5-5ca2-99d5-635b4d34b66c')
-      expect(history).to be_a(MatcheshHistory)
-      expect(history.matches[0]).to be_a(Match)
-      expect(history.matches[0].all_players[0]).to be_a(Player)
+      expect(match_histor_puuid).to be_a(MatcheshHistory)
+      expect(match_histor_puuid.matches[0]).to be_a(Match)
+      expect(match_histor_puuid.matches[0].all_players[0]).to be_a(Player)
     end
 
     it 'contains matches' do
-      history = api.match_history_by_puuid('140479d6-a2e5-5ca2-99d5-635b4d34b66c')
-      expect(history.matches.length).to be > 0
+      expect(match_histor_puuid.matches.length).to be > 0
     end
 
     it 'matches contain players' do
-      history = api.match_history_by_puuid('140479d6-a2e5-5ca2-99d5-635b4d34b66c')
-      expect(history.matches[0].all_players.length).to be > 0
+      expect(match_histor_puuid.matches[0].all_players.length).to be > 0
+    end
+  end
+
+  describe '#mmr_data' do
+    let(:mmr_data) { api.mmr_data('jaredthejelly', 'yours') }
+    it 'is a MMRV1 object' do
+      expect(mmr_data).to be_a(MMRV1)
+    end
+
+    it 'has a matching name, tag & region' do
+      expect(mmr_data.name).to eq('jaredthejelly')
+      expect(mmr_data.tag).to eq('yours')
+    end
+  end
+
+  describe '#mmr_data_by_puuid' do
+    let(:mmr_data_puuid) { api.mmr_data_by_puuid('140479d6-a2e5-5ca2-99d5-635b4d34b66c') }
+    it 'is a MMRV1 object' do
+      expect(mmr_data_puuid).to be_a(MMRV1)
+    end
+  end
+
+  describe '#mmr_history' do
+    let(:mmr_history) { api.mmr_history('jaredthejelly', 'yours') }
+    it 'is a MMRHistory object' do
+      expect(mmr_history).to be_a(MMRHistory)
+    end
+
+    it 'contains mmr data' do
+      expect(mmr_history.data.length).to be > 0
+    end
+
+    it 'mmr data is a MMRV1 object' do
+      expect(mmr_history.data[0]).to be_a(MMRV1)
+    end
+  end
+
+  describe '#mmr_history_by_puuid' do
+    let(:mmr_history_puuid) { api.mmr_history_by_puuid('140479d6-a2e5-5ca2-99d5-635b4d34b66c') }
+    it 'is a MMRHistory object' do
+      expect(mmr_history_puuid).to be_a(MMRHistory)
+    end
+
+    it 'contains mmr data' do
+      expect(mmr_history_puuid.data.length).to be > 0
+    end
+
+    it 'mmr data is a MMRV1 object' do
+      expect(mmr_history_puuid.data[0]).to be_a(MMRV1)
     end
   end
 

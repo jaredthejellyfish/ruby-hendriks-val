@@ -1,0 +1,19 @@
+{
+  "status": 200,
+  "data": {
+    "currenttier": 13,
+    "currenttierpatched": "Gold 2",
+    "images": {
+      "small": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/13/smallicon.png",
+      "large": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/13/largeicon.png",
+      "triangle_down": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/13/ranktriangledownicon.png",
+      "triangle_up": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/13/ranktriangleupicon.png"
+    },
+    "ranking_in_tier": 69,
+    "mmr_change_to_last_game": -19,
+    "elo": 1069,
+    "name": "jaredthejelly",
+    "tag": "yours",
+    "old": false
+  }
+}

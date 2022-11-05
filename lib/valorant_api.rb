@@ -6,6 +6,8 @@ require 'json'
 require_relative 'match'
 require_relative 'user'
 require_relative 'matches_history'
+require_relative 'mmr_v1'
+require_relative 'mmr_history'
 
 # This class is the main class of the gem. It is used to get the data from the Valorant API
 class ValorantAPI
@@ -29,6 +31,22 @@ class ValorantAPI
     MatcheshHistory.new(fetch_resposne("v3/by-puuid/matches/#{region}/#{puuid}"))
   end
 
+  def mmr_data(name = '', tag = '', region = 'eu', version = 'v1')
+    MMRV1.new(fetch_resposne("#{version}/mmr/#{region}/#{name}/#{tag}"))
+  end
+
+  def mmr_data_by_puuid(puuid, region = 'eu', version = 'v1')
+    MMRV1.new(fetch_resposne("#{version}/by-puuid/mmr/#{region}/#{puuid}"))
+  end
+
+  def mmr_history(name = '', tag = '', region = 'eu')
+    MMRHistory.new(fetch_resposne("v1/mmr-history/#{region}/#{name}/#{tag}"))
+  end
+
+  def mmr_history_by_puuid(puuid, region = 'eu')
+    MMRHistory.new(fetch_resposne("v1/by-puuid/mmr-history/#{region}/#{puuid}"))
+  end
+
   def server_status(region = 'eu')
     fetch_resposne("v1/status/#{region}")['data'].transform_keys(&:to_sym)
   end
@@ -46,3 +64,6 @@ class ValorantAPI
     raise "Error: #{response['status']} - #{response['message']}"
   end
 end
+
+api = ValorantAPI.new
+puts api.mmr_history_by_puuid('140479d6-a2e5-5ca2-99d5-635b4d34b66c').data[0].currenttierpatched

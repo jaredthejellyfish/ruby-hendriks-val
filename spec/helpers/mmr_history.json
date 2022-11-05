@@ -1,0 +1,82 @@
+{
+  "status": 200,
+  "name": "jaredthejelly",
+  "tag": "yours",
+  "data": [
+    {
+      "currenttier": 13,
+      "currenttierpatched": "Gold 2",
+      "images": {
+        "small": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/13/smallicon.png",
+        "large": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/13/largeicon.png",
+        "triangle_down": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/13/ranktriangledownicon.png",
+        "triangle_up": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/13/ranktriangleupicon.png"
+      },
+      "ranking_in_tier": 69,
+      "mmr_change_to_last_game": -19,
+      "elo": 1069,
+      "date": "Tuesday, October 25, 2022 8:31 PM",
+      "date_raw": 1666722689
+    },
+    {
+      "currenttier": 13,
+      "currenttierpatched": "Gold 2",
+      "images": {
+        "small": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/13/smallicon.png",
+        "large": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/13/largeicon.png",
+        "triangle_down": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/13/ranktriangledownicon.png",
+        "triangle_up": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/13/ranktriangleupicon.png"
+      },
+      "ranking_in_tier": 88,
+      "mmr_change_to_last_game": 15,
+      "elo": 1088,
+      "date": "Monday, October 24, 2022 8:43 PM",
+      "date_raw": 1666637035
+    },
+    {
+      "currenttier": 13,
+      "currenttierpatched": "Gold 2",
+      "images": {
+        "small": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/13/smallicon.png",
+        "large": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/13/largeicon.png",
+        "triangle_down": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/13/ranktriangledownicon.png",
+        "triangle_up": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/13/ranktriangleupicon.png"
+      },
+      "ranking_in_tier": 73,
+      "mmr_change_to_last_game": -15,
+      "elo": 1073,
+      "date": "Saturday, October 22, 2022 11:12 PM",
+      "date_raw": 1666473122
+    },
+    {
+      "currenttier": 13,
+      "currenttierpatched": "Gold 2",
+      "images": {
+        "small": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/13/smallicon.png",
+        "large": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/13/largeicon.png",
+        "triangle_down": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/13/ranktriangledownicon.png",
+        "triangle_up": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/13/ranktriangleupicon.png"
+      },
+      "ranking_in_tier": 88,
+      "mmr_change_to_last_game": 19,
+      "elo": 1088,
+      "date": "Saturday, October 22, 2022 8:07 PM",
+      "date_raw": 1666462026
+    },
+    {
+      "currenttier": 13,
+      "currenttierpatched": "Gold 2",
+      "images": {
+        "small": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/13/smallicon.png",
+        "large": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/13/largeicon.png",
+        "triangle_down": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/13/ranktriangledownicon.png",
+        "triangle_up": "https://media.valorant-api.com/competitivetiers/03621f52-342b-cf4e-4f86-9350a49c6d04/13/ranktriangleupicon.png"
+      },
+      "ranking_in_tier": 69,
+      "mmr_change_to_last_game": 19,
+      "elo": 1069,
+      "date": "Saturday, October 22, 2022 7:25 PM",
+      "date_raw": 1666459530
+    }
+  ]
+}

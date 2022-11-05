@@ -8,10 +8,10 @@
 
 - Implement routes:
   - [x] Get Account Data (_GET /valorant/v1/account/:name/:tag_)
-  - [ ] Get MMR Data (_GET /valorant/:version/mmr/:name/:tag_)
-  - [ ] Get MMR Data by PUUID (_GET /valorant/:version/by-puuid/mmr/:region/:puuid_)
-  - [ ] Get MMR History (_GET /valorant/v1/mmr-history/:region/:name/:tag_)
-  - [ ] Get MMR History by PUUID (_GET /valorant/v1/by-puuid/mmr-history/:region/:puuid_)
+  - [x] Get MMR Data (_GET /valorant/:version/mmr/:name/:tag_)
+  - [x] Get MMR Data by PUUID (_GET /valorant/:version/by-puuid/mmr/:region/:puuid_)
+  - [x] Get MMR History (_GET /valorant/v1/mmr-history/:region/:name/:tag_)
+  - [C] Get MMR History by PUUID (_GET /valorant/v1/by-puuid/mmr-history/:region/:puuid_)
   - [x] Get Match History (_GET /valorant/v3/matches/:region/:name/:tag_)
   - [x] Get Match History by PUUID (_GET /valorant/v3/by-puuid/matches/:region/:puuid_)
   - [x] Get Match Data (_GET /valorant/v2/match/:matchid_)
@@ -22,38 +22,66 @@
   - [ ] Get all available offers (_GET /valorant/v1/store-offers_)
   - [ ] Get Featured Bundle (_GET /valorant/v1/store-featured_)
 
+Implement route versions:
+- [ ] Get MMR Data (implmented v1, needs v2 & 3)
+- [ ] Get MMR Data by PUUID (implmented v1, needs v2 & 3)
 ---
 
 ## Rake Tasks:
 
-Run rspec on match.rb
-
+Run rspec on valorant_api.rb
 ```ruby
-  rake match
+rake api
 ```
 
-Run rspec on player.rb
-
+Run rspec on :focus tagged tests
 ```ruby
-  rake player
-```
-
-Run rspec on user.rb
-
-```ruby
-  rake user
-```
-
-Run rspec on matches_history.rb
-
-```ruby
-  rake history
+rake focus
 ```
 
 Generate file loading for single file tests
-
 ```ruby
-  rake loader[file_name]
+rake loader[type]
+```
+
+Run rspec on match.rb
+```ruby
+rake match
+```
+
+Run rspec on matches_history.rb
+```ruby
+rake matches_history
+```
+
+Run rspec on mmr_history_spec.rb
+```ruby
+rake mmr_history
+```
+
+Run rspec on mmr_v1_spec.rb
+```ruby
+rake mmrv1
+```
+
+Run rspec on player.rb
+```ruby
+rake player
+```
+
+Look for style guide offenses in your code
+```ruby
+rake rubocop
+```
+
+Run RSpec code examples
+```ruby
+rake spec
+```
+
+Run rspec on user.rb
+```ruby
+rake user
 ```
 
 ---

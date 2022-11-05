@@ -1,7 +1,6 @@
 # frozen_string_literal: false
 
 require_relative 'match'
-require 'json'
 
 # This class is used to get the data from the match history
 class MatcheshHistory
