@@ -11,7 +11,7 @@
   - [x] Get MMR Data (_GET /valorant/:version/mmr/:name/:tag_)
   - [x] Get MMR Data by PUUID (_GET /valorant/:version/by-puuid/mmr/:region/:puuid_)
   - [x] Get MMR History (_GET /valorant/v1/mmr-history/:region/:name/:tag_)
-  - [C] Get MMR History by PUUID (_GET /valorant/v1/by-puuid/mmr-history/:region/:puuid_)
+  - [x] Get MMR History by PUUID (_GET /valorant/v1/by-puuid/mmr-history/:region/:puuid_)
   - [x] Get Match History (_GET /valorant/v3/matches/:region/:name/:tag_)
   - [x] Get Match History by PUUID (_GET /valorant/v3/by-puuid/matches/:region/:puuid_)
   - [x] Get Match Data (_GET /valorant/v2/match/:matchid_)
