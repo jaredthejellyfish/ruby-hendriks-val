@@ -35,6 +35,17 @@ RSpec::Core::RakeTask.new(:history) do |t|
   t.pattern = 'spec/matches_history_spec.rb'
 end
 
+desc 'Run rspec on valorant_api.rb'
+RSpec::Core::RakeTask.new(:api) do |t|
+  t.rspec_opts = '--require helpers/bonus_formatter.rb --format BonusFormatter'
+  t.pattern = 'spec/valorant_api_spec.rb'
+end
+
+desc 'Run rspec on valorant_api.rb'
+RSpec::Core::RakeTask.new(:focus) do |t|
+  t.rspec_opts = '--tag focus --require helpers/bonus_formatter.rb --format BonusFormatter'
+end
+
 desc 'Generate file loading for single file tests'
 task :loader, [:type] do |_, args|
   puts

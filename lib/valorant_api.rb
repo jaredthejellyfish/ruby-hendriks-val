@@ -17,10 +17,6 @@ class ValorantAPI
     User.new(fetch_resposne("v1/account/#{name}/#{tag}"))
   end
 
-  def match_from_id(match_id)
-    Match.new(fetch_resposne("v2/match/#{match_id}"))
-  end
-
   def match_data(match_id)
     Match.new(fetch_resposne("v2/match/#{match_id}"))
   end
@@ -50,7 +46,3 @@ class ValorantAPI
     raise "Error: #{response['status']} - #{response['message']}"
   end
 end
-
-api = ValorantAPI.new
-puts api.server_status('latam')
-#regions 

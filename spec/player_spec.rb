@@ -12,29 +12,29 @@ describe Player do
   let(:player) { Player.new(data_hash) }
 
   describe '#initialize' do
-    it 'should take one parameter' do
+    it 'takes one parameter' do
       initialize_parameters_count = Player.allocate.method(:initialize).arity
       expect(initialize_parameters_count).to eq 1
     end
 
-    it 'should set the instance variables' do
+    it 'sets the instance variables' do
       nil_vars = player.instance_variables.sort.each_with_object([]) do |variable, array|
         array << variable if player.instance_variable_get(variable).nil?
       end
       expect(nil_vars).to be_empty
     end
 
-    it 'should not let any of the instance variables be modified' do
+    it "doesn't let any of the instance variables be modified" do
       expect { player.name = 'notArealName' }.to raise_error(NoMethodError)
     end
 
-    it 'should have the correct amount of instance variables' do
+    it 'has the correct amount of instance variables' do
       expect(player.instance_variables.count).to eq 28
     end
 
-    it 'should have the correct instance variables' do
+    it 'has the correct instance variables' do
       instance_variables = %w[puuid name tag team level character currenttier currenttier_patched party_id player_card
-                              player_title assets_card assets_agent session_playtime behavior ability_casts score kills
+                              player_title assetss_card assetss_agent session_playtime behavior ability_casts score kills
                               deaths assists bodyshots headshots legshots spent_overall spent_average damage_made damage
                               received]
       expect(player.instance_variables.sort).to include(instance_variables.map { |var| "@#{var}".to_sym }[0])
@@ -79,12 +79,12 @@ describe Player do
     end
   end
   describe '#instance_variable_hash' do
-    it '@assets_card is a hash' do
+    it '@assetss_card is a hash' do
       expect(player.assets_card).to be_a(Hash)
       expect(player.assets_card).to include(:large, :wide, :small)
     end
 
-    it '@assets_agent is a hash' do
+    it '@assetss_agent is a hash' do
       expect(player.assets_agent).to be_a(Hash)
       expect(player.assets_agent).to include(:small, :bust, :full, :killfeed)
     end
