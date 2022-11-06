@@ -33,16 +33,16 @@ A wrapper built around the freely accessible [Hendrinks API](https://docs.henrik
 - Documentation
 
   - [x] Get Account Data
-  - [ ] Get MMR Data
-  - [ ] Get MMR Data by PUUID
-  - [ ] Get MMR History
-  - [ ] Get MMR History by PUUID
+  - [x] Get MMR Data
+  - [x] Get MMR Data by PUUID
+  - [x] Get MMR History
+  - [x] Get MMR History by PUUID
   - [x] Get Match History
   - [x] Get Match History by PUUID
   - [x] Get Match Data
   - [ ] Get Website Articles
   - [ ] Get Leaderboard
-  - [ ] Get Server Status
+  - [x] Get Server Status
   - [ ] Get Content
   - [ ] Get all available offers
   - [ ] Get Featured Bundle
@@ -230,28 +230,61 @@ rake api:matches_history_by_puuid
 
 ### `mmr_data(name, tag, region, version)` → MMRV1
 
-Returns an `MMRV1` object with instance variable:
+Returns an `MMRV1` object with instance variables:
 
-- () :`aa`:
+- (int) :`ranking_in_tier`: Current Rank Rating (RR)
+- (int) :`mmr_change_to_last_game`: MMR change from the last game
+- (int) :`elo`: Match maker rating
+- (int) :`currenttier`: Current player rank as int
+<br/><br/>
+- (str) :`currenttierpatched`: Current player rank in format: "Gold 2"
+- (str) :`name`: Player name
+- (str) :`tag`: Player tag
+<br/><br/>
+- (hash) :`images`: 
+  - (str) :`small`: Rank logo in small size
+  - (str) :`large`: Rank logo in larger size
+  - (str) :`triangle_down`: Dorito sub-triangle pointing down
+  - (str) :`triangle_up`: Dorito sub-triangle pointing up
+<br/><br/>
+- (date) :`date`: Date of the data
+- (bool) :`old`: _*¿Unknown?*_
+
 
 To run static tests use:
 
 ```sh
-rake api:
+rake api:mmr_data
 ```
 
 <hr style="border-top: 1px dashed gray; background-color: transparent;" />
 
 ### `mmr_data_by_puuid(puuid, region, version)` → MMRV1
 
-Returns an `MMRV1` object with instance variable:
+Returns an `MMRV1` object with instance variables:
 
-- () :`aa`:
+- (int) :`ranking_in_tier`: Current Rank Rating (RR)
+- (int) :`mmr_change_to_last_game`: MMR change from the last game
+- (int) :`elo`: Match maker rating
+- (int) :`currenttier`: Current player rank as int
+<br/><br/>
+- (str) :`currenttierpatched`: Current player rank in format: "Gold 2"
+- (str) :`name`: Player name
+- (str) :`tag`: Player tag
+<br/><br/>
+- (hash) :`images`: 
+  - (str) :`small`: Rank logo in small size
+  - (str) :`large`: Rank logo in larger size
+  - (str) :`triangle_down`: Dorito sub-triangle pointing down
+  - (str) :`triangle_up`: Dorito sub-triangle pointing up
+<br/><br/>
+- (date) :`date`: Date of the data
+- (bool) :`old`: _*¿Unknown?*_
 
 To run static tests use:
 
 ```sh
-rake api:
+rake api:mmr_data_by_puuid
 ```
 
 <hr style="border-top: 1px dashed gray; background-color: transparent;" />
@@ -260,12 +293,12 @@ rake api:
 
 Returns an `MMRHistory` object with instance variable:
 
-- () :`aa`:
+- (arr) :`data`: `MMRV1` objects in an array.
 
 To run static tests use:
 
 ```sh
-rake api:
+rake api:mmr_history
 ```
 
 <hr style="border-top: 1px dashed gray; background-color: transparent;" />
@@ -274,12 +307,12 @@ rake api:
 
 Returns an `MMRHistory` object with instance variable:
 
-- () :`aa`:
+- (arr) :`data`: `MMRV1` objects in an array.
 
 To run static tests use:
 
 ```sh
-rake api:
+rake api:mmr_history_by_puuid
 ```
 
 <hr style="border-top: 1px dashed gray; background-color: transparent;" />
