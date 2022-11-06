@@ -119,6 +119,14 @@ rake user
 
 ## Documentation: _*(¡WIP!)*_
 
+### Index:
+- [`account_data(name, tag)`](#account_dataname-tag--user)
+- [`match_data(match_id)`](#match_datamatch_id--match--player)
+- [`matches_history(name, tag, region)`](#matches_historyname-tag-region--matcheshhistory--match--player)
+- [`matches_history_by_puuid(puuid, region)`](#matches_history_by_puuidpuuid-region--matcheshhistory--match--player)
+
+---
+
 ### `account_data(name, tag)` → User
 
 Returns a `User` object with instance variables:
@@ -184,7 +192,7 @@ rake api:match_data
 
 ### `matches_history(name, tag, region)` → MatcheshHistory → Match → Player
 
-Returns a `MatcheshHistory` object with instance variables:
+Returns a `MatcheshHistory` object with instance variable:
 
 - (arr) :`matches`: 5 match objects in an array.
 
@@ -198,7 +206,7 @@ rake api:matches_history
 
 ### `matches_history_by_puuid(puuid, region)` → MatcheshHistory → Match → Player
 
-Returns a `MatcheshHistory` object with instance variables:
+Returns a `MatcheshHistory` object with instance variable:
 
 - (arr) :`matches`: 5 match objects in an array.
 
