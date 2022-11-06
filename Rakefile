@@ -35,12 +35,6 @@ RSpec::Core::RakeTask.new(:matches_history) do |t|
   t.pattern = 'spec/matches_history_spec.rb'
 end
 
-desc 'Run rspec on valorant_api.rb'
-RSpec::Core::RakeTask.new(:api) do |t|
-  t.rspec_opts = '--require helpers/bonus_formatter.rb --format BonusFormatter'
-  t.pattern = 'spec/valorant_api_spec.rb'
-end
-
 desc 'Run rspec on mmr_v1_spec.rb'
 RSpec::Core::RakeTask.new(:mmrv1) do |t|
   t.rspec_opts = '--require helpers/bonus_formatter.rb --format BonusFormatter'
@@ -58,11 +52,17 @@ RSpec::Core::RakeTask.new(:focus) do |t|
   t.rspec_opts = '--tag focus --require helpers/bonus_formatter.rb --format BonusFormatter'
 end
 
+desc 'Run rspec on valorant_api.rb'
+RSpec::Core::RakeTask.new(:api) do |t|
+  t.rspec_opts = '--require helpers/bonus_formatter.rb --format BonusFormatter'
+  t.pattern = 'spec/valorant_api_spec.rb'
+end
+
 namespace :api do
   RSpec::Core::RakeTask.new(:account_data) do |t|
     t.rspec_opts = '--tag account_data --require helpers/bonus_formatter.rb --format BonusFormatter'
   end
-
+  
   RSpec::Core::RakeTask.new(:match_data) do |t|
     t.rspec_opts = '--tag match_data --require helpers/bonus_formatter.rb --format BonusFormatter'
   end
