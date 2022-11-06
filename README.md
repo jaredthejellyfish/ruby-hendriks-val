@@ -128,12 +128,12 @@ rake user
   - [`matches_history(name, tag, region)`](#matches_historyname-tag-region--matcheshhistory--match--player)
   - [`matches_history_by_puuid(puuid, region)`](#matches_history_by_puuidpuuid-region--matcheshhistory--match--player)
 - MMR
-  - [`mmr_data(name, tag, region, version)`]()
-  - [`mmr_data_by_puuid(puuid, region, version)`]()
-  - [`mmr_history(name, tag, region)`]()
-  - [`mmr_history_by_puuid(puuid, region)`]()
+  - [`mmr_data(name, tag, region, version)`](#mmr_dataname-tag-region-version--mmrv1)
+  - [`mmr_data_by_puuid(puuid, region, version)`](#mmr_data_by_puuidpuuid-region-version--mmrv1)
+  - [`mmr_history(name, tag, region)`](#mmr_historyname-tag-region--mmrhistory--mmrv1)
+  - [`mmr_history_by_puuid(puuid, region)`](#mmr_history_by_puuidpuuid-region--mmrhistory--mmrv1)
 - Misc
-  - [`server_status(region)`]()
+  - [`server_status(region)`](#server_statusregion--hash)
 
 ---
 
