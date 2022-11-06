@@ -30,7 +30,7 @@ A wrapper built around the freely accessible [Hendrinks API](https://docs.henrik
   - [ ] Get MMR Data by PUUID (implmented v1, needs v2 & 3)
 
 - Documentation
-  - [ ] Get Account Data
+  - [x] Get Account Data
   - [ ] Get MMR Data
   - [ ] Get MMR Data by PUUID
   - [ ] Get MMR History
