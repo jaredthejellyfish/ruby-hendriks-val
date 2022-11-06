@@ -15,7 +15,7 @@ class ValorantAPI
     @base_url = 'https://api.henrikdev.xyz/valorant/'
   end
 
-  def account_data(name = '', tag = '')
+  def account_data(name, tag)
     User.new(fetch_resposne("v1/account/#{name}/#{tag}"))
   end
 
@@ -23,23 +23,23 @@ class ValorantAPI
     Match.new(fetch_resposne("v2/match/#{match_id}"))
   end
 
-  def matches_history(name = '', tag = '', region = 'eu', filter = '')
-    MatcheshHistory.new(fetch_resposne("v3/matches/#{region}/#{name}/#{tag}"))
+  def matches_history(name, tag, region = 'eu', filter: '')
+    MatcheshHistory.new(fetch_resposne("v3/matches/#{region}/#{name}/#{tag}?filter=#{filter}"))
   end
 
-  def matches_history_by_puuid(puuid, region = 'eu', filter = '')
-    MatcheshHistory.new(fetch_resposne("v3/by-puuid/matches/#{region}/#{puuid}"))
+  def matches_history_by_puuid(puuid, region = 'eu', filter: '')
+    MatcheshHistory.new(fetch_resposne("v3/by-puuid/matches/#{region}/#{puuid}?filter=#{filter}"))
   end
 
-  def mmr_data(name = '', tag = '', region = 'eu', version = 'v1')
+  def mmr_data(name, tag, region = 'eu', version: 'v1')
     MMRV1.new(fetch_resposne("#{version}/mmr/#{region}/#{name}/#{tag}"))
   end
 
-  def mmr_data_by_puuid(puuid, region = 'eu', version = 'v1')
+  def mmr_data_by_puuid(puuid, region = 'eu', version: 'v1')
     MMRV1.new(fetch_resposne("#{version}/by-puuid/mmr/#{region}/#{puuid}"))
   end
 
-  def mmr_history(name = '', tag = '', region = 'eu')
+  def mmr_history(name, tag, region = 'eu')
     MMRHistory.new(fetch_resposne("v1/mmr-history/#{region}/#{name}/#{tag}"))
   end
 
@@ -47,7 +47,7 @@ class ValorantAPI
     MMRHistory.new(fetch_resposne("v1/by-puuid/mmr-history/#{region}/#{puuid}"))
   end
 
-  def server_status(region = 'eu')
+  def server_status(region)
     fetch_resposne("v1/status/#{region}")['data'].transform_keys(&:to_sym)
   end
 

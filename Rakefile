@@ -58,6 +58,52 @@ RSpec::Core::RakeTask.new(:focus) do |t|
   t.rspec_opts = '--tag focus --require helpers/bonus_formatter.rb --format BonusFormatter'
 end
 
+namespace :api do
+  RSpec::Core::RakeTask.new(:account_data) do |t|
+    t.rspec_opts = '--tag account_data --require helpers/bonus_formatter.rb --format BonusFormatter'
+  end
+
+  RSpec::Core::RakeTask.new(:match_data) do |t|
+    t.rspec_opts = '--tag match_data --require helpers/bonus_formatter.rb --format BonusFormatter'
+  end
+
+  RSpec::Core::RakeTask.new(:matches_history) do |t|
+    t.rspec_opts = '--tag matches_history --require helpers/bonus_formatter.rb --format BonusFormatter'
+  end
+
+  RSpec::Core::RakeTask.new(:matches_history_by_puuid) do |t|
+    t.rspec_opts = '--tag matches_history_by_puuid --require helpers/bonus_formatter.rb --format BonusFormatter'
+  end
+
+  RSpec::Core::RakeTask.new(:mmr_data) do |t|
+    t.rspec_opts = '--tag mmr_data --require helpers/bonus_formatter.rb --format BonusFormatter'
+  end
+
+  RSpec::Core::RakeTask.new(:mmr_data_by_puuid) do |t|
+    t.rspec_opts = '--tag mmr_data_by_puuid --require helpers/bonus_formatter.rb --format BonusFormatter'
+  end
+
+  RSpec::Core::RakeTask.new(:mmr_history) do |t|
+    t.rspec_opts = '--tag mmr_history --require helpers/bonus_formatter.rb --format BonusFormatter'
+  end
+
+  RSpec::Core::RakeTask.new(:mmr_history_by_puuid) do |t|
+    t.rspec_opts = '--tag mmr_history_by_puuid --require helpers/bonus_formatter.rb --format BonusFormatter'
+  end
+
+  RSpec::Core::RakeTask.new(:server_status) do |t|
+    t.rspec_opts = '--tag server_status --require helpers/bonus_formatter.rb --format BonusFormatter'
+  end
+
+  RSpec::Core::RakeTask.new(:fetch_resposne) do |t|
+    t.rspec_opts = '--tag fetch_resposne --require helpers/bonus_formatter.rb --format BonusFormatter'
+  end
+
+  RSpec::Core::RakeTask.new(:validate_response) do |t|
+    t.rspec_opts = '--tag validate_response --require helpers/bonus_formatter.rb --format BonusFormatter'
+  end
+end
+
 desc 'Generate file loading for single file tests'
 task :loader, [:type] do |_, args|
   puts

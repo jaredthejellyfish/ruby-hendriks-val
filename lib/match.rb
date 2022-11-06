@@ -5,8 +5,8 @@ require_relative 'player'
 # This class is used to get the data from a match
 class Match
   attr_reader :game_version, :game_start_patched, :season_id, :platform, :region,
-              :cluster, :map, :mode, :queue, :rounds_played, :matchid, :game_length, 
-              :game_start, :winning_team, :red_rounds_won, :red_rounds_lost, 
+              :cluster, :map, :mode, :queue, :rounds_played, :matchid, :game_length,
+              :game_start, :winning_team, :red_rounds_won, :red_rounds_lost,
               :blue_rounds_won, :blue_rounds_lost, :red_team, :blue_team, :all_players
 
   def initialize(data)
