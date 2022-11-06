@@ -128,13 +128,13 @@ Returns a `User` object with instance variables:
 - (str) :`name`: Player's name.
 - (str) :`tag`: Player's tag.
 - (str) :`last_update`: Last time the server updated the data in a human readable format.
-<br/><br/>
+  <br/><br/>
 - (hash) :`card`:
   - (str) :`small`: URL to the small version of a player's card.
   - (str) :`large`: URL to the large version of a player's card.
   - (str) :`wide`: URL to the wide version of a player's card.
   - (str) :`id`: ID for a player's card.
-<br/><br/>
+    <br/><br/>
 - (int) :`account_level`: Player's account level.
 - (int) :`last_update_raw`: Last time the server updated the data in unix millis.
 
@@ -158,7 +158,7 @@ Returns a `Match` object with instance variables:
 - (str) :`cluster`: Cluster the game was played in (e.g. Madrid)
 - (str) :`map`: Map the game was played in. ([possible maps](#maps))
 - (str) :`mode`: Game mode of the match ([possible game modes](#filters))
-- (str) :`queue`: Queue type for the match ([possible queue types](#game-modes))
+- (str) :`queue`: Queue type for the match ([possible queue types](#queue-types))
 - (str) :`matchid`: Match ID for the match
 - (str) :`winning_team`: Winning team for the match (`Blue`, `Red`)
   <br/><br/>
@@ -235,3 +235,12 @@ rake api:matches_history_by_puuid
 ---
 
 ### Maps:
+
+| Bind | Haven | Split | Ascent | Icebox | Breeze | Fracture | Pearl |
+| ---- | ----- | ----- | ------ | ------ | ------ | -------- | ----- |
+
+---
+
+### Queue types:
+
+Queue type will always match `@mode` unless it is a custom game, then the queue type will designate the game mode played. (`unrated` and `competitive` get replaced by `standard`)
