@@ -5,9 +5,9 @@ require_relative 'player'
 # This class is used to get the data from a match
 class Match
   attr_reader :game_version, :game_start_patched, :season_id, :platform, :region,
-              :cluster, :map, :mode, :queue, :rounds_played, :matchid, :game_length, :game_start,
-              :num_rounds, :winning_team, :red_rounds_won, :red_rounds_lost, :blue_rounds_won,
-              :blue_rounds_lost, :red_team, :blue_team, :all_players
+              :cluster, :map, :mode, :queue, :rounds_played, :matchid, :game_length, 
+              :game_start, :winning_team, :red_rounds_won, :red_rounds_lost, 
+              :blue_rounds_won, :blue_rounds_lost, :red_team, :blue_team, :all_players
 
   def initialize(data)
     @meta_data = data['data']['metadata']
@@ -66,7 +66,6 @@ class Match
   end
 
   def fetch_team_stats
-    @num_rounds = @team_data['red']['rounds_won'] + @team_data['red']['rounds_lost']
     @winning_team = @team_data['red']['has_won'] ? 'red' : 'blue'
     @red_rounds_won = @team_data['red']['rounds_won']
     @red_rounds_lost = @team_data['red']['rounds_lost']

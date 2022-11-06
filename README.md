@@ -3,13 +3,13 @@
 A wrapper built around the freely accessible [Hendrinks API](https://docs.henrikdev.xyz/valorant.html)
 
 ---
-## [Browse the code in your browser!](https://github.dev/jaredthejellyfish/ruby-hendriks-val)
 
+## [Browse the code in your browser!](https://github.dev/jaredthejellyfish/ruby-hendriks-val)
 
 ## To do:
 
-
 - Routes:
+
   - [x] Get Account Data (_GET /valorant/v1/account/:name/:tag_)
   - [x] Get MMR Data (_GET /valorant/:version/mmr/:name/:tag_)
   - [x] Get MMR Data by PUUID (_GET /valorant/:version/by-puuid/mmr/:region/:puuid_)
@@ -26,18 +26,20 @@ A wrapper built around the freely accessible [Hendrinks API](https://docs.henrik
   - [ ] Get Featured Bundle (_GET /valorant/v1/store-featured_)
 
 - Route versions:
+
   - [ ] Get MMR Data (implmented v1, needs v2 & 3)
   - [ ] Get MMR Data by PUUID (implmented v1, needs v2 & 3)
 
 - Documentation
+
   - [x] Get Account Data
   - [ ] Get MMR Data
   - [ ] Get MMR Data by PUUID
   - [ ] Get MMR History
   - [ ] Get MMR History by PUUID
-  - [ ] Get Match History
-  - [ ] Get Match History by PUUID
-  - [ ] Get Match Data
+  - [x] Get Match History
+  - [x] Get Match History by PUUID
+  - [x] Get Match Data
   - [ ] Get Website Articles
   - [ ] Get Leaderboard
   - [ ] Get Server Status
@@ -50,130 +52,186 @@ A wrapper built around the freely accessible [Hendrinks API](https://docs.henrik
 ## Rake Tasks:
 
 Run rspec on valorant_api.rb
+
 ```ruby
 rake api
 ```
 
 Run rspec on :focus tagged tests
+
 ```ruby
 rake focus
 ```
 
 Generate file loading for single file tests
+
 ```ruby
 rake loader[type]
 ```
 
 Run rspec on match.rb
+
 ```ruby
 rake match
 ```
 
 Run rspec on matches_history.rb
+
 ```ruby
 rake matches_history
 ```
 
 Run rspec on mmr_history_spec.rb
+
 ```ruby
 rake mmr_history
 ```
 
 Run rspec on mmr_v1_spec.rb
+
 ```ruby
 rake mmrv1
 ```
 
 Run rspec on player.rb
+
 ```ruby
 rake player
 ```
 
 Look for style guide offenses in your code
+
 ```ruby
 rake rubocop
 ```
 
 Run RSpec code examples
+
 ```ruby
 rake spec
 ```
 
 Run rspec on user.rb
+
 ```ruby
 rake user
 ```
 
-## Documentation: *_(¡WIP!)_*
+## Documentation: _*(¡WIP!)*_
 
 ### `account_data(name, tag)` → User
 
 Returns a `User` object with instance variables:
 
-- (str) :`puuid`: The unique player identifier key.
-- (str) :`region`: The region the player is based in [regions](#regions).
-- (str) :`name`: The player's name.
-- (str) :`tag`: The player's tag.
-- (str) :`last_update`: The last time the server updated the data in a human readable format.
-- (hash) :`card`: 
-  - (str) :`small`: Holds the url to the small version of a player's card.
-  - (str) :`large`: Holds the url to the large version of a player's card.
-  - (str) :`wide`: Holds the url to the wide version of a player's card.
-  - (str) :`id`: Holds the id of a player's card.
-- (int) :`account_level`: The player's account level.
-- (int) :`last_update_raw`: The last time the server updated the data in unix millis.
+- (str) :`puuid`: Unique player identifier.
+- (str) :`region`: Region the player is based in [regions](#regions).
+- (str) :`name`: Player's name.
+- (str) :`tag`: Player's tag.
+- (str) :`last_update`: Last time the server updated the data in a human readable format.
+<br/><br/>
+- (hash) :`card`:
+  - (str) :`small`: URL to the small version of a player's card.
+  - (str) :`large`: URL to the large version of a player's card.
+  - (str) :`wide`: URL to the wide version of a player's card.
+  - (str) :`id`: ID for a player's card.
+<br/><br/>
+- (int) :`account_level`: Player's account level.
+- (int) :`last_update_raw`: Last time the server updated the data in unix millis.
 
-To run static tests use: 
-```sh 
+To run static tests use:
+
+```sh
 rake api:account_data
 ```
+
 <hr style="border-top: 1px dashed gray; background-color: transparent;" />
 
 ### `match_data(match_id)` → Match → Player
 
 Returns a `Match` object with instance variables:
 
-- (str) :`game_version`: 
-- (str) :`game_start_patched`: 
-- (str) :`season_id`: 
-- (str) :`platform`: 
-- (str) :`region`: 
-- (str) :`cluster`: 
-- (str) :`map`: 
-- (str) :`mode`: 
-- (str) :`queue`: 
-- (str) :`matchid`: 
-- (str) :`winning_team`:
-   
-- (int) :`rounds_played`: 
-- (int) :`game_length`: 
-- (int) :`game_start`: 
-- (int) :`num_rounds`: 
-- (int) :`red_rounds_won`: 
-- (int) :`red_rounds_lost`: 
-- (int) :`blue_rounds_won`: 
-- (int) :`blue_rounds_lost`: 
-   
-- (arr) :`red_team`: 
-- (arr) :`blue_team`: 
-- (arr) :`all_players`: 
+- (str) :`game_version`: Version of the game at the time of the match
+- (str) :`game_start_patched`: Start time in the format: "Tuesday, November 1, 2022 11:33 PM"
+- (str) :`season_id`: ID of the season
+- (str) :`platform`: Platform and OS version the user was running at the time of the match.
+- (str) :`region`: Region the match was played in. ([possible regions](#regions))
+- (str) :`cluster`: Cluster the game was played in (e.g. Madrid)
+- (str) :`map`: Map the game was played in. ([possible maps](#maps))
+- (str) :`mode`: Game mode of the match ([possible game modes](#filters))
+- (str) :`queue`: Queue type for the match ([possible queue types](#game-modes))
+- (str) :`matchid`: Match ID for the match
+- (str) :`winning_team`: Winning team for the match (`Blue`, `Red`)
+  <br/><br/>
+- (int) :`rounds_played`: Total number of rounds played
+- (int) :`game_length`: Length of the game in milliseconds
+- (int) :`game_start`: Start of the game in unix time
+- (int) :`red_rounds_won`: Rounds won by the red team
+- (int) :`red_rounds_lost`: Rounds lost by the red team
+- (int) :`blue_rounds_won`: Rounds won by the blue team
+- (int) :`blue_rounds_lost`: Rounds lost by the blue team
+  <br/><br/>
+- (arr) :`red_team`: All players in the read team as individual player objects.
+- (arr) :`blue_team`: All players in the blue team as individual player objects.
+- (arr) :`all_players`: All players as individual player objects.
 
-To run static tests use: 
-```sh 
+To run static tests use:
+
+```sh
 rake api:match_data
 ```
+
 <hr style="border-top: 1px dashed gray; background-color: transparent;" />
 
+### `matches_history(name, tag, region)` → MatcheshHistory → Match → Player
 
+Returns a `MatcheshHistory` object with instance variables:
+
+- (arr) :`matches`: 5 match objects in an array.
+
+To run static tests use:
+
+```sh
+rake api:matches_history
+```
+
+<hr style="border-top: 1px dashed gray; background-color: transparent;" />
+
+### `matches_history_by_puuid(puuid, region)` → MatcheshHistory → Match → Player
+
+Returns a `MatcheshHistory` object with instance variables:
+
+- (arr) :`matches`: 5 match objects in an array.
+
+To run static tests use:
+
+```sh
+rake api:matches_history_by_puuid
+```
+
+<hr style="border-top: 1px dashed gray; background-color: transparent;" />
+
+## Regions:
+
+| Region | Location |
+| :----: | :------- |
+|  `na`  | America  |
+|  `eu`  | Eurpe    |
+|  `kr`  | Asia     |
+|  `ap`  | Oceania  |
 
 ---
 
-## Available regions:
+### Filters:
 
-- NA
-- EU
-- KR
-- AP
+| Game Mode   | Filter                          |
+| :---------- | :------------------------------ |
+| escalation  | `{endpoint}?filter=escalation`  |
+| spikerush   | `{endpoint}?filter=spikerush`   |
+| deathmatch  | `{endpoint}?filter=deathmatch`  |
+| competitive | `{endpoint}?filter=competitive` |
+| unrated     | `{endpoint}?filter=unrated`     |
+| replication | `{endpoint}?filter=replication` |
 
 ---
-### Available Firlters:
+
+### Maps:

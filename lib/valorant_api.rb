@@ -23,11 +23,11 @@ class ValorantAPI
     Match.new(fetch_resposne("v2/match/#{match_id}"))
   end
 
-  def match_history(name = '', tag = '', region = 'eu')
+  def matches_history(name = '', tag = '', region = 'eu')
     MatcheshHistory.new(fetch_resposne("v3/matches/#{region}/#{name}/#{tag}"))
   end
 
-  def match_history_by_puuid(puuid, region = 'eu')
+  def matches_history_by_puuid(puuid, region = 'eu')
     MatcheshHistory.new(fetch_resposne("v3/by-puuid/matches/#{region}/#{puuid}"))
   end
 
