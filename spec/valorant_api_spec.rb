@@ -35,26 +35,26 @@ describe ValorantAPI do
     end
   end
 
-  describe '#match_history' do
-    let(:match_history) { api.match_history('jaredthejelly', 'yours') }
+  describe '#matches_history' do
+    let(:matches_history) { api.matches_history('jaredthejelly', 'yours') }
 
     it 'is a MatcheshHistory object' do
-      expect(match_history).to be_a(MatcheshHistory)
-      expect(match_history.matches[0]).to be_a(Match)
-      expect(match_history.matches[0].all_players[0]).to be_a(Player)
+      expect(matches_history).to be_a(MatcheshHistory)
+      expect(matches_history.matches[0]).to be_a(Match)
+      expect(matches_history.matches[0].all_players[0]).to be_a(Player)
     end
 
     it 'contains matches' do
-      expect(match_history.matches.length).to be > 0
+      expect(matches_history.matches.length).to be > 0
     end
 
     it 'matches contain players' do
-      expect(match_history.matches[0].all_players.length).to be > 0
+      expect(matches_history.matches[0].all_players.length).to be > 0
     end
   end
 
-  describe '#match_history_by_puuid' do
-    let(:match_histor_puuid) { api.match_history_by_puuid('140479d6-a2e5-5ca2-99d5-635b4d34b66c') }
+  describe '#matches_history_by_puuid' do
+    let(:match_histor_puuid) { api.matches_history_by_puuid('140479d6-a2e5-5ca2-99d5-635b4d34b66c') }
     it 'is a MatcheshHistory object' do
       expect(match_histor_puuid).to be_a(MatcheshHistory)
       expect(match_histor_puuid.matches[0]).to be_a(Match)

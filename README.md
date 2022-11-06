@@ -120,10 +120,20 @@ rake user
 ## Documentation: _*(¡WIP!)*_
 
 ### Index:
-- [`account_data(name, tag)`](#account_dataname-tag--user)
-- [`match_data(match_id)`](#match_datamatch_id--match--player)
-- [`matches_history(name, tag, region)`](#matches_historyname-tag-region--matcheshhistory--match--player)
-- [`matches_history_by_puuid(puuid, region)`](#matches_history_by_puuidpuuid-region--matcheshhistory--match--player)
+
+- Account
+  - [`account_data(name, tag)`](#account_dataname-tag--user)
+- Match
+  - [`match_data(match_id)`](#match_datamatch_id--match--player)
+  - [`matches_history(name, tag, region)`](#matches_historyname-tag-region--matcheshhistory--match--player)
+  - [`matches_history_by_puuid(puuid, region)`](#matches_history_by_puuidpuuid-region--matcheshhistory--match--player)
+- MMR
+  - [`mmr_data(name, tag, region, version)`]()
+  - [`mmr_data_by_puuid(puuid, region, version)`]()
+  - [`mmr_history(name, tag, region)`]()
+  - [`mmr_history_by_puuid(puuid, region)`]()
+- Misc
+  - [`server_status(region)`]()
 
 ---
 
@@ -214,6 +224,77 @@ To run static tests use:
 
 ```sh
 rake api:matches_history_by_puuid
+```
+
+<hr style="border-top: 1px dashed gray; background-color: transparent;" />
+
+### `mmr_data(name, tag, region, version)` → MMRV1
+
+Returns an `MMRV1` object with instance variable:
+
+- () :`aa`:
+
+To run static tests use:
+
+```sh
+rake api:
+```
+
+<hr style="border-top: 1px dashed gray; background-color: transparent;" />
+
+### `mmr_data_by_puuid(puuid, region, version)` → MMRV1
+
+Returns an `MMRV1` object with instance variable:
+
+- () :`aa`:
+
+To run static tests use:
+
+```sh
+rake api:
+```
+
+<hr style="border-top: 1px dashed gray; background-color: transparent;" />
+
+### `mmr_history(name, tag, region)` → MMRHistory → MMRV1
+
+Returns an `MMRHistory` object with instance variable:
+
+- () :`aa`:
+
+To run static tests use:
+
+```sh
+rake api:
+```
+
+<hr style="border-top: 1px dashed gray; background-color: transparent;" />
+
+### `mmr_history_by_puuid(puuid, region)` → MMRHistory → MMRV1
+
+Returns an `MMRHistory` object with instance variable:
+
+- () :`aa`:
+
+To run static tests use:
+
+```sh
+rake api:
+```
+
+<hr style="border-top: 1px dashed gray; background-color: transparent;" />
+
+### `server_status(region)` → Hash
+
+Returns an `Hash` object with keys:
+
+- (arr) :`:maintenances`: Any clusters currently down under maintenance.
+- (arr) :`:incidents`: Any cluesters with active incident reports.
+
+To run static tests use:
+
+```sh
+rake api:server_status
 ```
 
 <hr style="border-top: 1px dashed gray; background-color: transparent;" />

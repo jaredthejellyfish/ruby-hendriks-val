@@ -30,12 +30,12 @@ describe Match do
     end
 
     it 'has the correct amount of instance variables' do
-      expect(match.instance_variables.count).to eq 25
+      expect(match.instance_variables.count).to eq 24
     end
 
     it 'has the correct instance variables' do
       instance_vars = %w[game_version game_start_patched season_id platform region cluster map mode
-                         queue rounds_played matchid game_length game_start red_team blue_team num_rounds
+                         queue rounds_played matchid game_length game_start red_team blue_team
                          winning_team red_rounds_won red_rounds_lost blue_rounds_won blue_rounds_lost]
 
       expect(match.instance_variables.sort).to include(instance_vars.map { |var| "@#{var}".to_sym }[0])
@@ -78,8 +78,10 @@ describe Match do
 
   # All players
   describe '#all_players' do
-    it 'is an array of Player objects' do
+    it 'is an array' do
       expect(match.all_players).to be_a(Array)
+    end
+    it 'of Player objects' do
       expect(match.all_players.first).to be_a(Player)
     end
   end
@@ -143,10 +145,6 @@ describe Match do
 
     it '@game_start is an integer' do
       expect(match.game_start).to be_a(Integer)
-    end
-
-    it '@num_rounds is an integer' do
-      expect(match.num_rounds).to be_a(Integer)
     end
 
     it '@red_rounds_won is an integer' do
