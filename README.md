@@ -3,6 +3,7 @@
 A wrapper built around the freely accessible [Hendrinks API](https://docs.henrikdev.xyz/valorant.html)
 
 ---
+## [Browse the code in your browser!](https://github.dev/jaredthejellyfish/ruby-hendriks-val)
 
 
 ## To do:
@@ -167,9 +168,12 @@ rake api:match_data
 
 ---
 
-## Regions:
+## Available regions:
 
 - NA
 - EU
 - KR
 - AP
+
+---
+### Available Firlters:
