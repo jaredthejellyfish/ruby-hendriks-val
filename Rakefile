@@ -62,7 +62,7 @@ namespace :api do
   RSpec::Core::RakeTask.new(:account_data) do |t|
     t.rspec_opts = '--tag account_data --require helpers/bonus_formatter.rb --format BonusFormatter'
   end
-  
+
   RSpec::Core::RakeTask.new(:match_data) do |t|
     t.rspec_opts = '--tag match_data --require helpers/bonus_formatter.rb --format BonusFormatter'
   end
