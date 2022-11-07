@@ -50,73 +50,33 @@ A wrapper built around the freely accessible [Hendrinks API](https://docs.henrik
 - Adopt the Ruby GEM scheme
 
 ## Rake Tasks:
+```sh
+rake focus                         # Run rspec on :focus tagged tests
+rake loader[type]                  # Generate file loading for single file tests
 
-Run rspec on valorant_api.rb
+rake match                         # Run rspec on match.rb
+rake matches_history               # Run rspec on matches_history.rb
+rake mmr_history                   # Run rspec on mmr_history_spec.rb
+rake mmrv1                         # Run rspec on mmr_v1_spec.rb
+rake player                        # Run rspec on player.rb
+rake rubocop                       # Look for style guide offenses in your code
+rake spec                          # Run RSpec code examples
+rake user                          # Run rspec on user.rb
 
-```ruby
-rake api
+rake api                           # Run rspec on valorant_api.rb
+rake api:account_data              # Run rspec on account_data()
+rake api:fetch_resposne            # Run rspec on fetch_resposne()
+rake api:match_data                # Run rspec on match_data()
+rake api:matches_history           # Run rspec on matches_history()
+rake api:matches_history_by_puuid  # Run rspec on matches_history_by_puuid()
+rake api:mmr_data                  # Run rspec on mmr_data()
+rake api:mmr_data_by_puuid         # Run rspec on mmr_data_by_puuid()
+rake api:mmr_history               # Run rspec on mmr_history()
+rake api:mmr_history_by_puuid      # Run rspec on mmr_history_by_puuid()
+rake api:server_status             # Run rspec on server_status()
+rake api:validate_filter           # Run rspec on validate_filter()
+rake api:validate_response         # Run rspec on validate_response()
 ```
-
-Run rspec on :focus tagged tests
-
-```ruby
-rake focus
-```
-
-Generate file loading for single file tests
-
-```ruby
-rake loader[type]
-```
-
-Run rspec on match.rb
-
-```ruby
-rake match
-```
-
-Run rspec on matches_history.rb
-
-```ruby
-rake matches_history
-```
-
-Run rspec on mmr_history_spec.rb
-
-```ruby
-rake mmr_history
-```
-
-Run rspec on mmr_v1_spec.rb
-
-```ruby
-rake mmrv1
-```
-
-Run rspec on player.rb
-
-```ruby
-rake player
-```
-
-Look for style guide offenses in your code
-
-```ruby
-rake rubocop
-```
-
-Run RSpec code examples
-
-```ruby
-rake spec
-```
-
-Run rspec on user.rb
-
-```ruby
-rake user
-```
-
 ## Documentation: _*(¡WIP!)*_
 
 ### Index:

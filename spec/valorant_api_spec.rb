@@ -1,3 +1,5 @@
+# frozen_string_literals: false
+
 require 'rest-client'
 require 'json'
 
@@ -69,7 +71,8 @@ describe ValorantAPI do
     let(:match_histor_puuid) { api.matches_history_by_puuid('140479d6-a2e5-5ca2-99d5-635b4d34b66c') }
 
     it 'takes 3 parameters' do
-      expect((ValorantAPI.allocate.method(:matches_history_by_puuid).parameters.flatten - %i[req opt key]).count).to eq(3)
+      expect((ValorantAPI.allocate.method(:matches_history_by_puuid).parameters.flatten - %i[req opt
+                                                                                             key]).count).to eq(3)
     end
 
     it 'is a MatcheshHistory object' do

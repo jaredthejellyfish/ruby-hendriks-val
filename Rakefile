@@ -59,50 +59,62 @@ RSpec::Core::RakeTask.new(:api) do |t|
 end
 
 namespace :api do
+  desc 'Run rspec on account_data()'
   RSpec::Core::RakeTask.new(:account_data) do |t|
     t.rspec_opts = '--tag account_data --require helpers/bonus_formatter.rb --format BonusFormatter'
   end
 
+  desc 'Run rspec on match_data()'
   RSpec::Core::RakeTask.new(:match_data) do |t|
     t.rspec_opts = '--tag match_data --require helpers/bonus_formatter.rb --format BonusFormatter'
   end
 
+  desc 'Run rspec on matches_history()'
   RSpec::Core::RakeTask.new(:matches_history) do |t|
     t.rspec_opts = '--tag matches_history --require helpers/bonus_formatter.rb --format BonusFormatter'
   end
 
+  desc 'Run rspec on matches_history_by_puuid()'
   RSpec::Core::RakeTask.new(:matches_history_by_puuid) do |t|
     t.rspec_opts = '--tag matches_history_by_puuid --require helpers/bonus_formatter.rb --format BonusFormatter'
   end
 
+  desc 'Run rspec on mmr_data()'
   RSpec::Core::RakeTask.new(:mmr_data) do |t|
     t.rspec_opts = '--tag mmr_data --require helpers/bonus_formatter.rb --format BonusFormatter'
   end
 
+  desc 'Run rspec on mmr_data_by_puuid()'
   RSpec::Core::RakeTask.new(:mmr_data_by_puuid) do |t|
     t.rspec_opts = '--tag mmr_data_by_puuid --require helpers/bonus_formatter.rb --format BonusFormatter'
   end
 
+  desc 'Run rspec on mmr_history()'
   RSpec::Core::RakeTask.new(:mmr_history) do |t|
     t.rspec_opts = '--tag mmr_history --require helpers/bonus_formatter.rb --format BonusFormatter'
   end
 
+  desc 'Run rspec on mmr_history_by_puuid()'
   RSpec::Core::RakeTask.new(:mmr_history_by_puuid) do |t|
     t.rspec_opts = '--tag mmr_history_by_puuid --require helpers/bonus_formatter.rb --format BonusFormatter'
   end
 
+  desc 'Run rspec on server_status()'
   RSpec::Core::RakeTask.new(:server_status) do |t|
     t.rspec_opts = '--tag server_status --require helpers/bonus_formatter.rb --format BonusFormatter'
   end
 
+  desc 'Run rspec on fetch_resposne()'
   RSpec::Core::RakeTask.new(:fetch_resposne) do |t|
     t.rspec_opts = '--tag fetch_resposne --require helpers/bonus_formatter.rb --format BonusFormatter'
   end
 
+  desc 'Run rspec on validate_response()'
   RSpec::Core::RakeTask.new(:validate_response) do |t|
     t.rspec_opts = '--tag validate_response --require helpers/bonus_formatter.rb --format BonusFormatter'
   end
 
+  desc 'Run rspec on validate_filter()'
   RSpec::Core::RakeTask.new(:validate_filter) do |t|
     t.rspec_opts = '--tag validate_filter --require helpers/bonus_formatter.rb --format BonusFormatter'
   end
