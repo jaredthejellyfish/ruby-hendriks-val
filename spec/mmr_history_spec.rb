@@ -16,7 +16,7 @@ describe MMRHistory do
       expect(mmr_history.data).to be_a(Array)
     end
 
-    it 'of Match objects' do
+    it 'of MMRV1 objects' do
       expect(mmr_history.data[0]).to be_a(MMRV1)
     end
   end

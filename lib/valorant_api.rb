@@ -24,11 +24,11 @@ class ValorantAPI
   end
 
   def matches_history(name, tag, region = 'eu', filter: '')
-    MatcheshHistory.new(fetch_resposne("v3/matches/#{region}/#{name}/#{tag}?filter=#{filter}"))
+    MatcheshHistory.new(fetch_resposne("v3/matches/#{region}/#{name}/#{tag}?filter=#{validate_filter(filter)}"))
   end
 
   def matches_history_by_puuid(puuid, region = 'eu', filter: '')
-    MatcheshHistory.new(fetch_resposne("v3/by-puuid/matches/#{region}/#{puuid}?filter=#{filter}"))
+    MatcheshHistory.new(fetch_resposne("v3/by-puuid/matches/#{region}/#{puuid}?filter=#{validate_filter(filter)}"))
   end
 
   def mmr_data(name, tag, region = 'eu', version: 'v1')
@@ -62,5 +62,14 @@ class ValorantAPI
     return response if response['status'] == 200
 
     raise "Error: #{response['status']} - #{response['message']}"
+  end
+
+  def validate_filter(filter)
+    return if filter.empty?
+
+    filters = %w[escalation spikerush deathmatch competitive unrated replication]
+    raise "Error: Invalid filter. Valid filters are: #{filters.join(', ')}" unless filters.include?(filter)
+
+    filter
   end
 end

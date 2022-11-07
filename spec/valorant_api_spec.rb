@@ -181,4 +181,18 @@ describe ValorantAPI do
       expect { api.send(:validate_response, { 'status' => 400, 'message' => 'Error' }) }.to raise_error(RuntimeError)
     end
   end
+
+  describe '#validate_filter', validate_filter: true do
+    it 'raises error if filter invalid' do
+      expect { api.send(:validate_filter, 'notAFilter') }.to raise_error(RuntimeError)
+    end
+
+    it 'returns filter if valid' do
+      expect(api.send(:validate_filter, 'competitive')).to eq('competitive')
+    end
+
+    it 'returns nil if no filter' do
+      expect(api.send(:validate_filter, '')).to eq(nil)
+    end
+  end
 end

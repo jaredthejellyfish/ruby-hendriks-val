@@ -102,6 +102,10 @@ namespace :api do
   RSpec::Core::RakeTask.new(:validate_response) do |t|
     t.rspec_opts = '--tag validate_response --require helpers/bonus_formatter.rb --format BonusFormatter'
   end
+
+  RSpec::Core::RakeTask.new(:validate_filter) do |t|
+    t.rspec_opts = '--tag validate_filter --require helpers/bonus_formatter.rb --format BonusFormatter'
+  end
 end
 
 desc 'Generate file loading for single file tests'
