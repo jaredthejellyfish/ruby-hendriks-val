@@ -34,9 +34,9 @@ describe Player do
 
     it 'has the correct instance variables' do
       instance_variables = %w[puuid name tag team level character currenttier currenttier_patched party_id player_card
-                              player_title assetss_card assetss_agent session_playtime behavior ability_casts score kills
-                              deaths assists bodyshots headshots legshots spent_overall spent_average damage_made damage
-                              received]
+                              player_title assetss_card assetss_agent session_playtime behavior ability_casts score
+                              kills deaths assists bodyshots headshots legshots spent_overall spent_average damage_made
+                              damage_received]
       expect(player.instance_variables.sort).to include(instance_variables.map { |var| "@#{var}".to_sym }[0])
     end
   end
