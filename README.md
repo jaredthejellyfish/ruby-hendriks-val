@@ -53,13 +53,13 @@ A wrapper built around the freely accessible [Hendrinks API](https://docs.henrik
 ```sh
 rake focus                         # Run rspec on :focus tagged tests
 rake loader[type]                  # Generate file loading for single file tests
+rake rubocop                       # Look for style guide offenses in your code
 
 rake match                         # Run rspec on match.rb
 rake matches_history               # Run rspec on matches_history.rb
 rake mmr_history                   # Run rspec on mmr_history_spec.rb
 rake mmrv1                         # Run rspec on mmr_v1_spec.rb
 rake player                        # Run rspec on player.rb
-rake rubocop                       # Look for style guide offenses in your code
 rake spec                          # Run RSpec code examples
 rake user                          # Run rspec on user.rb
 
