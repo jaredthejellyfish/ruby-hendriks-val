@@ -96,6 +96,7 @@ rake api:validate_response         # Run rspec on validate_response()
   - [`mmr_history_by_puuid(puuid, region)`](#mmr_history_by_puuidpuuid-region--mmrhistory--mmrv1)
 - Misc
   - [`server_status(region)`](#server_statusregion--hash)
+  - [`articles(filter, locale)`](#articlesfilter-locale--articles--article)
 
 ---
 
