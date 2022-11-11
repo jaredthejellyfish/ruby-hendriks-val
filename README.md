@@ -81,7 +81,6 @@ rake api:server_status             # Run rspec on server_status()
 rake api:validate_filter           # Run rspec on validate_filter()
 rake api:validate_locale           # Run rspec on validate_filter()
 rake api:validate_response         # Run rspec on validate_response()
-
 ```
 
 ## Documentation: _*(¡WIP!)*_
