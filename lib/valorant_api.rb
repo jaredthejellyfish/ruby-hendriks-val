@@ -47,6 +47,10 @@ class ValorantAPI
     MMRHistory.new(fetch_resposne("v1/by-puuid/mmr-history/#{region}/#{puuid}"))
   end
 
+  def articles(filter = '', locale = 'en-us')
+    Articles.new(fetch_resposne("v1/website/#{validate_locale(locale)}?filter=#{validate_filter(filter)}"))
+  end
+
   def server_status(region)
     fetch_resposne("v1/status/#{region}")['data'].transform_keys(&:to_sym)
   end
@@ -67,9 +71,18 @@ class ValorantAPI
   def validate_filter(filter)
     return if filter.empty?
 
-    filters = %w[escalation spikerush deathmatch competitive unrated replication]
+    filters = %w[escalation spikerush deathmatch competitive unrated replication game_updates dev esports announcments]
     raise "Error: Invalid filter. Valid filters are: #{filters.join(', ')}" unless filters.include?(filter)
 
     filter
+  end
+
+  def validate_locale(locale)
+    return if locale.empty?
+
+    locales = %w[en-us en-gb de-de es-es fr-fr it-it ru-ru tr-tr es-mx ja-jp ko-kr pt-br]
+    raise "Error: Invalid locale. Valid locales are: #{locales.join(', ')}" unless locales.include?(locale)
+
+    locale
   end
 end

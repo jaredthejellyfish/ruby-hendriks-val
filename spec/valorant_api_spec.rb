@@ -159,6 +159,22 @@ describe ValorantAPI do
     end
   end
 
+  describe '#articles', articles: true do
+    let(:articles) { api.articles }
+
+    it 'takes 2 parameters' do
+      expect((ValorantAPI.allocate.method(:articles).parameters.flatten - %i[req opt key]).count).to eq(2)
+    end
+
+    it 'is an Articles object' do
+      expect(articles).to be_a(Articles)
+    end
+
+    it 'contains articles' do
+      expect(articles.articles.length).to be > 0
+    end
+  end
+
   describe '#server_status', server_status: true do
     it 'takes 1 parameter' do
       expect((ValorantAPI.allocate.method(:server_status).parameters.flatten - %i[req opt key]).count).to eq(1)
@@ -196,6 +212,20 @@ describe ValorantAPI do
 
     it 'returns nil if no filter' do
       expect(api.send(:validate_filter, '')).to eq(nil)
+    end
+  end
+
+  describe '#validate_locale', validate_locale: true do
+    it 'raises error if locale invalid' do
+      expect { api.send(:validate_locale, 'notAFilter') }.to raise_error(RuntimeError)
+    end
+
+    it 'returns locale if valid' do
+      expect(api.send(:validate_locale, 'en-us')).to eq('en-us')
+    end
+
+    it 'returns nil if no locale' do
+      expect(api.send(:validate_locale, '')).to eq(nil)
     end
   end
 end

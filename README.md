@@ -18,7 +18,7 @@ A wrapper built around the freely accessible [Hendrinks API](https://docs.henrik
   - [x] Get Match History (_GET /valorant/v3/matches/:region/:name/:tag_)
   - [x] Get Match History by PUUID (_GET /valorant/v3/by-puuid/matches/:region/:puuid_)
   - [x] Get Match Data (_GET /valorant/v2/match/:matchid_)
-  - [ ] Get Website Articles (_GET /valorant/v1/website/:country-code_)
+  - [x] Get Website Articles (_GET /valorant/v1/website/:country-code_)
   - [ ] Get Leaderboard (_GET /valorant/v1/leaderboard/:region_)
   - [x] Get Server Status (_GET /valorant/v1/status/:region_)
   - [ ] Get Content (_GET /valorant/v1/content_)
@@ -288,6 +288,27 @@ To run static tests use:
 
 ```sh
 rake api:server_status
+```
+
+<hr style="border-top: 1px dashed gray; background-color: transparent;" />
+
+### `articles(filter, locale)` → Articles → Article
+
+Returns an `Articles` object with instance variable:
+
+- (arr) :`:articles`: `Article` objects in an array.
+  - `Article` object instance variables:
+    - (str) :`:baner_url`: Article banner.
+    - (str) :`:category`: Article category. (possibe categories)
+    - (str) :`:external_link`: Usually null. Otherwise unknown.
+    - (str) :`:title`: Article title.
+    - (str) :`:url`: Article url.
+    - (date) :`:date`: Article release date.
+
+To run static tests use:
+
+```sh
+rake api:articles
 ```
 
 <hr style="border-top: 1px dashed gray; background-color: transparent;" />

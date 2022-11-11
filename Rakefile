@@ -47,15 +47,27 @@ RSpec::Core::RakeTask.new(:mmr_history) do |t|
   t.pattern = 'spec/mmr_history_spec.rb'
 end
 
-desc 'Run rspec on :focus tagged tests'
-RSpec::Core::RakeTask.new(:focus) do |t|
-  t.rspec_opts = '--tag focus --require helpers/bonus_formatter.rb --format BonusFormatter'
+desc 'Run rspec on article.rb'
+RSpec::Core::RakeTask.new(:article) do |t|
+  t.rspec_opts = '--require helpers/bonus_formatter.rb --format BonusFormatter'
+  t.pattern = 'spec/article_spec.rb'
+end
+
+desc 'Run rspec on article.rb'
+RSpec::Core::RakeTask.new(:articles) do |t|
+  t.rspec_opts = '--require helpers/bonus_formatter.rb --format BonusFormatter'
+  t.pattern = 'spec/article_spec.rb'
 end
 
 desc 'Run rspec on valorant_api.rb'
 RSpec::Core::RakeTask.new(:api) do |t|
   t.rspec_opts = '--require helpers/bonus_formatter.rb --format BonusFormatter'
   t.pattern = 'spec/valorant_api_spec.rb'
+end
+
+desc 'Run rspec on :focus tagged tests'
+RSpec::Core::RakeTask.new(:focus) do |t|
+  t.rspec_opts = '--tag focus --require helpers/bonus_formatter.rb --format BonusFormatter'
 end
 
 namespace :api do
@@ -117,6 +129,16 @@ namespace :api do
   desc 'Run rspec on validate_filter()'
   RSpec::Core::RakeTask.new(:validate_filter) do |t|
     t.rspec_opts = '--tag validate_filter --require helpers/bonus_formatter.rb --format BonusFormatter'
+  end
+
+  desc 'Run rspec on validate_filter()'
+  RSpec::Core::RakeTask.new(:validate_locale) do |t|
+    t.rspec_opts = '--tag validate_locale --require helpers/bonus_formatter.rb --format BonusFormatter'
+  end
+
+  desc 'Run rspec on articles()'
+  RSpec::Core::RakeTask.new(:articles) do |t|
+    t.rspec_opts = '--tag articles --require helpers/bonus_formatter.rb --format BonusFormatter'
   end
 end
 
