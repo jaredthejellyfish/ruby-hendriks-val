@@ -40,7 +40,7 @@ A wrapper built around the freely accessible [Hendrinks API](https://docs.henrik
   - [x] Get Match History
   - [x] Get Match History by PUUID
   - [x] Get Match Data
-  - [ ] Get Website Articles
+  - [x] Get Website Articles
   - [ ] Get Leaderboard
   - [x] Get Server Status
   - [ ] Get Content
