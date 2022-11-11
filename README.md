@@ -50,6 +50,7 @@ A wrapper built around the freely accessible [Hendrinks API](https://docs.henrik
 - Adopt the Ruby GEM scheme
 
 ## Rake Tasks:
+
 ```sh
 rake focus                         # Run rspec on :focus tagged tests
 rake loader[type]                  # Generate file loading for single file tests
@@ -77,6 +78,7 @@ rake api:server_status             # Run rspec on server_status()
 rake api:validate_filter           # Run rspec on validate_filter()
 rake api:validate_response         # Run rspec on validate_response()
 ```
+
 ## Documentation: _*(¡WIP!)*_
 
 ### Index:
@@ -135,7 +137,7 @@ Returns a `Match` object with instance variables:
 - (str) :`region`: Region the match was played in. ([possible regions](#regions))
 - (str) :`cluster`: Cluster the game was played in (e.g. Madrid)
 - (str) :`map`: Map the game was played in. ([possible maps](#maps))
-- (str) :`mode`: Game mode of the match ([possible game modes](#filters))
+- (str) :`mode`: Game mode of the match ([possible game modes](#game-modes))
 - (str) :`queue`: Queue type for the match ([possible queue types](#queue-types))
 - (str) :`matchid`: Match ID for the match
 - (str) :`winning_team`: Winning team for the match (`Blue`, `Red`)
@@ -196,20 +198,19 @@ Returns an `MMRV1` object with instance variables:
 - (int) :`mmr_change_to_last_game`: MMR change from the last game
 - (int) :`elo`: Match maker rating
 - (int) :`currenttier`: Current player rank as int
-<br/><br/>
+  <br/><br/>
 - (str) :`currenttierpatched`: Current player rank in format: "Gold 2"
 - (str) :`name`: Player name
 - (str) :`tag`: Player tag
-<br/><br/>
-- (hash) :`images`: 
+  <br/><br/>
+- (hash) :`images`:
   - (str) :`small`: Rank logo in small size
   - (str) :`large`: Rank logo in larger size
   - (str) :`triangle_down`: Dorito sub-triangle pointing down
   - (str) :`triangle_up`: Dorito sub-triangle pointing up
-<br/><br/>
+    <br/><br/>
 - (date) :`date`: Date of the data
 - (bool) :`old`: _*¿Unknown?*_
-
 
 To run static tests use:
 
@@ -227,17 +228,17 @@ Returns an `MMRV1` object with instance variables:
 - (int) :`mmr_change_to_last_game`: MMR change from the last game
 - (int) :`elo`: Match maker rating
 - (int) :`currenttier`: Current player rank as int
-<br/><br/>
+  <br/><br/>
 - (str) :`currenttierpatched`: Current player rank in format: "Gold 2"
 - (str) :`name`: Player name
 - (str) :`tag`: Player tag
-<br/><br/>
-- (hash) :`images`: 
+  <br/><br/>
+- (hash) :`images`:
   - (str) :`small`: Rank logo in small size
   - (str) :`large`: Rank logo in larger size
   - (str) :`triangle_down`: Dorito sub-triangle pointing down
   - (str) :`triangle_up`: Dorito sub-triangle pointing up
-<br/><br/>
+    <br/><br/>
 - (date) :`date`: Date of the data
 - (bool) :`old`: _*¿Unknown?*_
 
@@ -299,7 +300,7 @@ Returns an `Articles` object with instance variable:
 - (arr) :`:articles`: `Article` objects in an array.
   - `Article` object instance variables:
     - (str) :`:baner_url`: Article banner.
-    - (str) :`:category`: Article category. (possibe categories)
+    - (str) :`:category`: Article category. (possibe [categories](#filters))
     - (str) :`:external_link`: Usually null. Otherwise unknown.
     - (str) :`:title`: Article title.
     - (str) :`:url`: Article url.
@@ -326,14 +327,18 @@ rake api:articles
 
 ### Filters:
 
-| Game Mode   | Filter                          |
-| :---------- | :------------------------------ |
-| escalation  | `{endpoint}?filter=escalation`  |
-| spikerush   | `{endpoint}?filter=spikerush`   |
-| deathmatch  | `{endpoint}?filter=deathmatch`  |
-| competitive | `{endpoint}?filter=competitive` |
-| unrated     | `{endpoint}?filter=unrated`     |
-| replication | `{endpoint}?filter=replication` |
+| Name         | Filter                           |
+| :----------- | :------------------------------- |
+| escalation   | `{endpoint}?filter=escalation`   |
+| spikerush    | `{endpoint}?filter=spikerush`    |
+| deathmatch   | `{endpoint}?filter=deathmatch`   |
+| competitive  | `{endpoint}?filter=competitive`  |
+| unrated      | `{endpoint}?filter=unrated`      |
+| replication  | `{endpoint}?filter=replication`  |
+| game_updates | `{endpoint}?filter=game_updates` |
+| dev          | `{endpoint}?filter=dev`          |
+| esports      | `{endpoint}?filter=esports`      |
+| announcments | `{endpoint}?filter=announcments` |
 
 ---
 
@@ -341,6 +346,32 @@ rake api:articles
 
 | Bind | Haven | Split | Ascent | Icebox | Breeze | Fracture | Pearl |
 | ---- | ----- | ----- | ------ | ------ | ------ | -------- | ----- |
+
+---
+
+### Game modes:
+
+| escalation | spikerush | deathmatch | competitive | unrated | replication |
+| ---------- | --------- | ---------- | ----------- | ------- | ----------- |
+
+---
+
+### Locales:
+
+|  Name   |     Region     |
+| :-----: | :------------- |
+| `en-us` |  English, US   |
+| `en-gb` |  English, UK   |
+| `de-de` |   German, DE   |
+| `es-es` |  Spanish, ES   |
+| `fr-fr` |   French, FR   |
+| `it-it` |  Italian, IT   |
+| `ru-ru` |  Russian, RU   |
+| `tr-tr` |  Turkish, TR   |
+| `es-mx` |  Spanish, MX   |
+| `ja-jp` |  Japanese, JP  |
+| `ko-kr` |   Korean, KR   |
+| `pt-br` | Portuguese, BR |
 
 ---
 
