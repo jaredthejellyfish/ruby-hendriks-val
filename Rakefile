@@ -1,4 +1,4 @@
-# frozen_string_literal: false
+# frozen_string_literal: true
 
 require 'rspec/core/rake_task'
 
@@ -57,6 +57,18 @@ desc 'Run rspec on article.rb'
 RSpec::Core::RakeTask.new(:articles) do |t|
   t.rspec_opts = '--require helpers/bonus_formatter.rb --format BonusFormatter'
   t.pattern = 'spec/article_spec.rb'
+end
+
+desc 'Run rspec on leader.rb'
+RSpec::Core::RakeTask.new(:leader) do |t|
+  t.rspec_opts = '--require helpers/bonus_formatter.rb --format BonusFormatter'
+  t.pattern = 'spec/leader_spec.rb'
+end
+
+desc 'Run rspec on leader_board.rb'
+RSpec::Core::RakeTask.new(:leader_board) do |t|
+  t.rspec_opts = '--require helpers/bonus_formatter.rb --format BonusFormatter'
+  t.pattern = 'spec/leader_board_spec.rb'
 end
 
 desc 'Run rspec on valorant_api.rb'
@@ -139,6 +151,11 @@ namespace :api do
   desc 'Run rspec on articles()'
   RSpec::Core::RakeTask.new(:articles) do |t|
     t.rspec_opts = '--tag articles --require helpers/bonus_formatter.rb --format BonusFormatter'
+  end
+
+  desc 'Run rspec on leader_board()'
+  RSpec::Core::RakeTask.new(:leader_board) do |t|
+    t.rspec_opts = '--tag leader_board --require helpers/bonus_formatter.rb --format BonusFormatter'
   end
 end
 

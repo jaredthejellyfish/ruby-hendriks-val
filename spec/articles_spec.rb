@@ -8,7 +8,7 @@ end
 file = File.read(File.dirname(__FILE__) + '/helpers/articles.json')
 data_hash = JSON.parse(file)
 
-describe Articles, focus: true do
+describe Articles do
   let(:online_articles) { Articles.new(data_hash) }
 
   describe '#articles' do

@@ -175,6 +175,26 @@ describe ValorantAPI do
     end
   end
 
+  describe '#leader_board', leader_board: true do
+    let(:leader_board) { api.leader_board }
+
+    it 'takes 2 parameters' do
+      expect((ValorantAPI.allocate.method(:leader_board).parameters.flatten - %i[req opt key]).count).to eq(3)
+    end
+
+    it 'is a Leaderboard object' do
+      expect(leader_board).to be_a(LeaderBoard)
+    end
+
+    it 'contains leaders' do
+      expect(leader_board.leaders.length).to be > 0
+    end
+
+    it 'leaders are Leader objects' do
+      expect(leader_board.leaders[0]).to be_a(Leader)
+    end
+  end
+
   describe '#server_status', server_status: true do
     it 'takes 1 parameter' do
       expect((ValorantAPI.allocate.method(:server_status).parameters.flatten - %i[req opt key]).count).to eq(1)

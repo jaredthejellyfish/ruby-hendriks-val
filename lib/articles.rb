@@ -1,4 +1,4 @@
-# frozen_string_literal: false
+# frozen_string_literal: true
 
 require_relative 'article'
 # This class is used to store the data for web articles.

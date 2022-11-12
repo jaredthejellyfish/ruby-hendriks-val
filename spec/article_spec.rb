@@ -11,7 +11,7 @@ data_hash = JSON.parse(file)
 describe Article do
   let(:article) { Article.new(data_hash) }
 
-  describe '#initialize', focus: true do
+  describe '#initialize' do
     it 'takes one parameter' do
       initialize_parameters_count = Article.allocate.method(:initialize).arity
       expect(initialize_parameters_count).to eq 1
@@ -33,7 +33,7 @@ describe Article do
     end
   end
 
-  describe '#instance_variable_strings', focus: true do
+  describe '#instance_variable_strings' do
     it '@banner_url is a string' do
       expect(article.banner_url).to be_a(String)
     end
@@ -55,7 +55,7 @@ describe Article do
     end
   end
 
-  describe '#instance_variable_dates', focus: true do
+  describe '#instance_variable_dates' do
     it '@date is a date' do
       expect(article.date).to be_a(Date)
     end

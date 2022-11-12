@@ -19,7 +19,7 @@ A wrapper built around the freely accessible [Hendrinks API](https://docs.henrik
   - [x] Get Match History by PUUID (_GET /valorant/v3/by-puuid/matches/:region/:puuid_)
   - [x] Get Match Data (_GET /valorant/v2/match/:matchid_)
   - [x] Get Website Articles (_GET /valorant/v1/website/:country-code_)
-  - [ ] Get Leaderboard (_GET /valorant/v1/leaderboard/:region_)
+  - [x] Get Leaderboard (_GET /valorant/v1/leaderboard/:region_)
   - [x] Get Server Status (_GET /valorant/v1/status/:region_)
   - [ ] Get Content (_GET /valorant/v1/content_)
   - [ ] Get all available offers (_GET /valorant/v1/store-offers_)
@@ -52,13 +52,15 @@ A wrapper built around the freely accessible [Hendrinks API](https://docs.henrik
 ## Rake Tasks:
 
 ```sh
+rake loader[type]                  # Generate file loading for single file tests
 rake rubocop                       # Look for style guide offenses in your code
 rake spec                          # Run RSpec code examples
-rake loader[type]                  # Generate file loading for single file tests
+rake focus                         # Run rspec on :focus tagged tests
 
 rake article                       # Run rspec on article.rb
 rake articles                      # Run rspec on article.rb
-rake focus                         # Run rspec on :focus tagged tests
+rake leader                        # Run rspec on leader.rb
+rake leader_board                  # Run rspec on leader_board.rb
 rake match                         # Run rspec on match.rb
 rake matches_history               # Run rspec on matches_history.rb
 rake mmr_history                   # Run rspec on mmr_history_spec.rb
@@ -70,6 +72,7 @@ rake api                           # Run rspec on valorant_api.rb
 rake api:account_data              # Run rspec on account_data()
 rake api:articles                  # Run rspec on articles()
 rake api:fetch_resposne            # Run rspec on fetch_resposne()
+rake api:leader_board              # Run rspec on leader_board()
 rake api:match_data                # Run rspec on match_data()
 rake api:matches_history           # Run rspec on matches_history()
 rake api:matches_history_by_puuid  # Run rspec on matches_history_by_puuid()
@@ -81,6 +84,7 @@ rake api:server_status             # Run rspec on server_status()
 rake api:validate_filter           # Run rspec on validate_filter()
 rake api:validate_locale           # Run rspec on validate_filter()
 rake api:validate_response         # Run rspec on validate_response()
+
 ```
 
 ## Documentation: _*(¡WIP!)*_
@@ -101,6 +105,7 @@ rake api:validate_response         # Run rspec on validate_response()
 - Misc
   - [`server_status(region)`](#server_statusregion--hash)
   - [`articles(filter, locale)`](#articlesfilter-locale--articles--article)
+  - [`leader_board(region, name, tag)`](#leader_boardregion-name-tag--hash)
 
 ---
 
@@ -315,6 +320,30 @@ To run static tests use:
 
 ```sh
 rake api:articles
+```
+
+<hr style="border-top: 1px dashed gray; background-color: transparent;" />
+
+### `leader_board(region*, name*, tag*)` → Articles → Article
+
+Returns an `LeaderBoard` object with instance variable:
+
+- (arr) :`:leaders`: `Leader` objects in an array.
+  - `Leader` object instance variables:
+    - (int) :`:leader_board_rank`: Leader board rank.
+    - (int) :`:ranked_rating`: Ranked rating.
+    - (int) :`:number_of_wins`: Number of wins.
+    - (int) :`:comptetitive_tier`: Competitive tier.
+    - (str) :`:puuid`: Player unique id.
+    - (str) :`:game_name`: Player game name.
+    - (str) :`:tag_line`: Player tag line.
+    - (str) :`:player_card_id`: Player card id.
+    - (str) :`:title_id`: Player title id.
+    - (bool) :`:is_banned`: Player banned status.
+    - (bool) :`:is_anonymized`: Player anonymized status.
+
+```sh
+rake api:leader_board
 ```
 
 <hr style="border-top: 1px dashed gray; background-color: transparent;" />
