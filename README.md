@@ -324,7 +324,7 @@ rake api:articles
 
 <hr style="border-top: 1px dashed gray; background-color: transparent;" />
 
-### `leader_board(region*, name*, tag*)` → Articles → Article
+### `leader_board(region*, name*, tag*)` → LeaderBoard → Leader
 
 Returns an `LeaderBoard` object with instance variable:
 
