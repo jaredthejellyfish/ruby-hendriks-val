@@ -41,7 +41,7 @@ A wrapper built around the freely accessible [Hendrinks API](https://docs.henrik
   - [x] Get Match History by PUUID
   - [x] Get Match Data
   - [x] Get Website Articles
-  - [ ] Get Leaderboard
+  - [x] Get Leaderboard
   - [x] Get Server Status
   - [ ] Get Content
   - [ ] Get all available offers
