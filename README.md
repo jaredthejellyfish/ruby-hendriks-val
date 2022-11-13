@@ -21,7 +21,7 @@ A wrapper built around the freely accessible [Hendrinks API](https://docs.henrik
   - [x] Get Website Articles (_GET /valorant/v1/website/:country-code_)
   - [x] Get Leaderboard (_GET /valorant/v1/leaderboard/:region_)
   - [x] Get Server Status (_GET /valorant/v1/status/:region_)
-  - [ ] Get Content (_GET /valorant/v1/content_)
+  - [x] Get Content (_GET /valorant/v1/content_)
   - [ ] Get all available offers (_GET /valorant/v1/store-offers_)
   - [ ] Get Featured Bundle (_GET /valorant/v1/store-featured_)
 
@@ -43,7 +43,7 @@ A wrapper built around the freely accessible [Hendrinks API](https://docs.henrik
   - [x] Get Website Articles
   - [x] Get Leaderboard
   - [x] Get Server Status
-  - [ ] Get Content
+  - [x] Get Content
   - [ ] Get all available offers
   - [ ] Get Featured Bundle
 
@@ -106,6 +106,7 @@ rake api:validate_response         # Run rspec on validate_response()
   - [`server_status(region)`](#server_statusregion--hash)
   - [`articles(filter, locale)`](#articlesfilter-locale--articles--article)
   - [`leader_board(region, name, tag)`](#leader_boardregion-name-tag--hash)
+  - [`content()`](#content--hash)
 
 ---
 
@@ -344,6 +345,73 @@ Returns an `LeaderBoard` object with instance variable:
 
 ```sh
 rake api:leader_board
+```
+
+<hr style="border-top: 1px dashed gray; background-color: transparent;" />
+
+### `content()` → Hash
+
+Returns an `Hash` object that holds all the translation for the game.
+<details><summary>Example:</summary>
+
+```json
+  ...
+    {
+      "name": "Sensation Odin",
+      "localizedNames": {
+        "ar-AE": "سنسايشن أودين",
+        "de-DE": "Odin – Farbexplosion",
+        "en-US": "Sensation Odin",
+        "es-ES": "Odin Sensation",
+        "es-MX": "Odin Fantabuloso",
+        "fr-FR": "Odin (Sensation)",
+        "id-ID": "Sensation Odin",
+        "it-IT": "Odin Sensazione",
+        "ja-JP": "センセーション オーディン",
+        "ko-KR": "센세이션 오딘",
+        "pl-PL": "Odin Sensacja",
+        "pt-BR": "Odin Sensação",
+        "ru-RU": "Odin \"Сенсация\"",
+        "th-TH": "Sensation Odin",
+        "tr-TR": "Şenlik Odin",
+        "vi-VN": "Odin Xúc Cảm",
+        "zh-CN": "炫彩澎湃 奥丁",
+        "zh-TW": "漆彩轟擊 奧丁"
+      },
+      "id": "53CE97ED-47E0-4856-0446-F7BC86E869E0",
+      "assetName": "Default__HMG_Rainbow_Standard_PrimaryAsset_C"
+    },
+    {
+      "name": "Lightwave Odin",
+      "localizedNames": {
+        "ar-AE": "لايت وايف أودين",
+        "de-DE": "Odin – Lichtwelle",
+        "en-US": "Lightwave Odin",
+        "es-ES": "Odin Lightwave",
+        "es-MX": "Odin Onda Luminosa",
+        "fr-FR": "Odin (Lightwave)",
+        "id-ID": "Lightwave Odin",
+        "it-IT": "Odin Onda luminosa",
+        "ja-JP": "ライトウェーブ オーディン",
+        "ko-KR": "라이트웨이브 오딘",
+        "pl-PL": "Odin Fala Świetlna",
+        "pt-BR": "Odin Cintilante",
+        "ru-RU": "Odin \"Световая волна\"",
+        "th-TH": "Lightwave Odin",
+        "tr-TR": "IŞIK DALGASI ODIN",
+        "vi-VN": "Odin Hồ Quang",
+        "zh-CN": "七彩光谱 奥丁",
+        "zh-TW": "炫彩光譜 奧丁"
+      },
+      "id": "156158A5-4EB2-79EF-49E9-16A680FE93A9",
+      "assetName": "Default__HMG_RGB_Standard_PrimaryAsset_C"
+    }
+  ...
+```
+</details>
+
+```sh
+rake api:content
 ```
 
 <hr style="border-top: 1px dashed gray; background-color: transparent;" />

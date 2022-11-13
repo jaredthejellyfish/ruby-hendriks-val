@@ -56,6 +56,10 @@ class ValorantAPI
     LeaderBoard.new(fetch_resposne("v1/leaderboard/#{region}?name=#{name}&tag=#{tag}", validate: false))
   end
 
+  def content
+    fetch_resposne('v1/content')
+  end
+
   def server_status(region)
     fetch_resposne("v1/status/#{region}")['data'].transform_keys(&:to_sym)
   end
@@ -64,13 +68,13 @@ class ValorantAPI
 
   def fetch_resposne(endpoint, validate: true)
     response = RestClient.get(@base_url + endpoint)
-    return validate_response(JSON.parse(response)) unless validate == false
+    return JSON.parse(validate_response(response)) unless validate == false
 
     JSON.parse(response)
   end
 
   def validate_response(response)
-    return response if response['status'] == 200
+    return response if response.code == 200
 
     raise "Error: #{response['status']} - #{response['message']}"
   end

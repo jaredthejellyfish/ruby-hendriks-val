@@ -11,6 +11,14 @@ task :rubocop do
   sh 'rubocop lib/ --format simple || true'
 end
 
+desc 'Open an irb session preloaded with the environment'
+task :console do
+  require 'rubygems'
+  require 'pry'
+
+  Pry.start
+end
+
 desc 'Run rspec on match.rb'
 RSpec::Core::RakeTask.new(:match) do |t|
   t.rspec_opts = ' --require helpers/bonus_formatter.rb --format BonusFormatter'
