@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'Date'
+require 'date'
 
 # This class is used to get the @data from MMR
 class MMRV1
