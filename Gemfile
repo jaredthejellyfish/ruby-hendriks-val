@@ -11,8 +11,8 @@ gem 'rspec', '~> 3.0'
 
 gem 'rubocop', '~> 1.21'
 
-gem 'fast_jsonparser', '~> 0.6.0'
+gem 'fast_jsonparser'
 
-gem 'rest-client', '~> 2.1'
+gem 'rest-client'
 
-gem 'date', '~> 2.0.3'
+gem 'date'

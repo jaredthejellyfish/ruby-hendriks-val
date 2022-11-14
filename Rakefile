@@ -17,8 +17,13 @@ task :rubofix do
   sh 'rubocop lib/ --fix --format simple || true'
 end
 
+desc 'Install required gems'
+task :install do
+  sh 'bundle install'
+end
+
 task :console do
   sh 'bin/console'
 end
 
-task default: %i[spec rubocop]
+task default: %i[rubocop install]
