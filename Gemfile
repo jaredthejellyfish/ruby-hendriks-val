@@ -14,3 +14,5 @@ gem 'rubocop', '~> 1.21'
 gem 'fast_jsonparser', '~> 0.6.0'
 
 gem 'rest-client', '~> 2.1'
+
+gem 'date', '~> 2.0.3'
