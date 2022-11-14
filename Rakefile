@@ -26,4 +26,4 @@ task :console do
   sh 'bin/console'
 end
 
-task default: %i[spec rubocop install]
+task default: %i[spec rubocop]

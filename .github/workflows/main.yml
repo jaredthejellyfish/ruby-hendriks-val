@@ -1,4 +1,4 @@
-name: Ruby
+name: Lint and test valorant-api
 
 on:
   push:
