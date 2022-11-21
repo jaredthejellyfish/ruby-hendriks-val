@@ -78,7 +78,7 @@ class Player
   end
 
   def session_platform_formatter(platform)
-    "#{platform['tpye']} #{platform['os'].values.join(' ')}"
+    "#{platform["tpye"]} #{platform["os"].values.join(" ")}"
   end
 
   def keys_to_sim(hash)

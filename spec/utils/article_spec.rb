@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'json'
 
 file = File.read(File.dirname(__FILE__) + '/helpers/article.json')
