@@ -1,6 +1,6 @@
 require 'json'
 
-file = File.read('/Users/gerardhernandez/code/ruby-hendriks-val/spec/helpers/mmr_history.json')
+file = File.read(File.dirname(__FILE__) + '/helpers/mmr_history.json')
 data_hash = JSON.parse(file)
 
 RSpec.describe MMRHistory do
