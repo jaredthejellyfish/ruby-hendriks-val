@@ -2,6 +2,11 @@
 
 require_relative '../lib/valorant'
 
+# Require all utils
+Dir["#{File.dirname(__FILE__)}../lib/api/utils"].each do |file|
+  require File.basename(file, File.extname(file))
+end
+
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
   config.example_status_persistence_file_path = '.rspec_status'

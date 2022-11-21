@@ -1,0 +1,61 @@
+{
+    "puuid": "140479d6-a2e5-5ca2-99d5-635b4d34b66c",
+    "name": "jaredthejelly",
+    "tag": "yours",
+    "team": "Red",
+    "level": 106,
+    "character": "Reyna",
+    "currenttier": 0,
+    "currenttier_patched": "Unrated",
+    "player_card": "4df86707-4c99-a978-5a74-ba92f157a33c",
+    "player_title": "184e2e0d-4df5-2979-9bb0-93b102cf38fd",
+    "party_id": "d9af373b-9b57-4df9-9a3f-6dfb739f402c",
+    "session_playtime": {
+      "minutes": 111,
+      "seconds": 6660,
+      "milliseconds": 6660000
+    },
+    "behavior": {
+      "afk_rounds": 0,
+      "friendly_fire": { "incoming": 0, "outgoing": 0 },
+      "rounds_in_spawn": 0
+    },
+    "platform": {
+      "type": "PC",
+      "os": { "name": "Windows", "version": "10.0.19044.1.256.64bit" }
+    },
+    "ability_casts": {
+      "c_cast": 25,
+      "q_cast": 29,
+      "e_cast": 14,
+      "x_cast": 6
+    },
+    "assets": {
+      "card": {
+        "small": "https://media.valorant-api.com/playercards/4df86707-4c99-a978-5a74-ba92f157a33c/smallart.png",
+        "large": "https://media.valorant-api.com/playercards/4df86707-4c99-a978-5a74-ba92f157a33c/largeart.png",
+        "wide": "https://media.valorant-api.com/playercards/4df86707-4c99-a978-5a74-ba92f157a33c/wideart.png"
+      },
+      "agent": {
+        "small": "https://media.valorant-api.com/agents/a3bfb853-43b2-7238-a4f1-ad90e9e46bcc/displayicon.png",
+        "bust": "https://media.valorant-api.com/agents/a3bfb853-43b2-7238-a4f1-ad90e9e46bcc/bustportrait.png",
+        "full": "https://media.valorant-api.com/agents/a3bfb853-43b2-7238-a4f1-ad90e9e46bcc/fullportrait.png",
+        "killfeed": "https://media.valorant-api.com/agents/a3bfb853-43b2-7238-a4f1-ad90e9e46bcc/killfeedportrait.png"
+      }
+    },
+    "stats": {
+      "score": 10886,
+      "kills": 39,
+      "deaths": 19,
+      "assists": 4,
+      "bodyshots": 71,
+      "headshots": 20,
+      "legshots": 2
+    },
+    "economy": {
+      "spent": { "overall": 45850, "average": 1910 },
+      "loadout_value": { "overall": 84300, "average": 3513 }
+    },
+    "damage_made": 6658,
+    "damage_received": 4203
+  }

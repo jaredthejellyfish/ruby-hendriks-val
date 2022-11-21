@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-RSpec.describe Valorant::Misc, now: true do
-  let(:client) { Valorant::Misc.new }
+RSpec.describe Valorant::Misc, misc: true do
+  let(:client) { Valorant::Misc }
   let(:articles) { client.articles }
   let(:leader_board) { client.leader_board }
   let(:content) { client.content }
@@ -9,7 +9,7 @@ RSpec.describe Valorant::Misc, now: true do
 
   describe '#articles', articles: true do
     it 'takes 2 parameters' do
-      expect((Valorant::Misc.allocate.method(:articles).parameters.flatten - %i[req opt key]).count).to eq(2)
+      expect((Valorant::Misc.method(:articles).parameters.flatten - %i[req opt key]).count).to eq(2)
     end
 
     it 'is an Articles object' do
@@ -23,7 +23,7 @@ RSpec.describe Valorant::Misc, now: true do
 
   describe '#leader_board', leader_board: true do
     it 'takes 2 parameters' do
-      expect((Valorant::Misc.allocate.method(:leader_board).parameters.flatten - %i[req opt key]).count).to eq(3)
+      expect((Valorant::Misc.method(:leader_board).parameters.flatten - %i[req opt key]).count).to eq(3)
     end
 
     it 'is a Leaderboard object' do
@@ -41,7 +41,7 @@ RSpec.describe Valorant::Misc, now: true do
 
   describe '#content', content: true do
     it 'takes 0 parameters' do
-      expect((Valorant::Misc.allocate.method(:content).parameters.flatten - %i[req opt key]).count).to eq(0)
+      expect((Valorant::Misc.method(:content).parameters.flatten - %i[req opt key]).count).to eq(0)
     end
 
     it 'is a Hash object' do
@@ -55,7 +55,7 @@ RSpec.describe Valorant::Misc, now: true do
 
   describe '#server_status', server_status: true do
     it 'takes 1 parameter' do
-      expect((Valorant::Misc.allocate.method(:server_status).parameters.flatten - %i[req opt key]).count).to eq(1)
+      expect((Valorant::Misc.method(:server_status).parameters.flatten - %i[req opt key]).count).to eq(1)
     end
 
     it 'returns a hash' do

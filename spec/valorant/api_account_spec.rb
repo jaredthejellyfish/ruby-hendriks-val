@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-RSpec.describe Valorant::AccountStats, focus: true do
-  let(:client) { Valorant::AccountStats.new }
+RSpec.describe Valorant::AccountStats, account: true do
+  let(:client) { Valorant::AccountStats }
   let(:account_data) { client.account_data('jaredthejelly', 'yours') }
 
   describe '#account_data' do
     it 'takes 2 parameters' do
-      expect((Valorant::AccountStats.allocate.method(:account_data).parameters.flatten - [:req]).count).to eq(2)
+      expect((Valorant::AccountStats.method(:account_data).parameters.flatten - [:req]).count).to eq(2)
     end
 
     it 'is a User object' do

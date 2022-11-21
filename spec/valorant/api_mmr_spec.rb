@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 RSpec.describe Valorant::MMRStats do
-  let(:client) { Valorant::MMRStats.new }
+  let(:client) { Valorant::MMRStats }
   let(:mmr_data) { client.mmr_data('jaredthejelly', 'yours') }
   let(:mmr_data_by_puuid) { client.mmr_data_by_puuid('140479d6-a2e5-5ca2-99d5-635b4d34b66c') }
   let(:mmr_history) { client.mmr_history('jaredthejelly', 'yours') }
@@ -9,7 +9,7 @@ RSpec.describe Valorant::MMRStats do
 
   describe '#mmr_data', mmr_data: true do
     it 'takes 4 parameters' do
-      expect((Valorant::MMRStats.allocate.method(:mmr_data).parameters.flatten - %i[req opt key]).count).to eq(4)
+      expect((Valorant::MMRStats.method(:mmr_data).parameters.flatten - %i[req opt key]).count).to eq(4)
     end
 
     it 'is a MMRV1 object' do
@@ -24,8 +24,8 @@ RSpec.describe Valorant::MMRStats do
 
   describe '#mmr_data_by_puuid', mmr_data_by_puuid: true do
     it 'takes 3 parameters' do
-      expect((Valorant::MMRStats.allocate.method(:mmr_data_by_puuid).parameters.flatten - %i[req opt
-                                                                                             key]).count).to eq(3)
+      expect((Valorant::MMRStats.method(:mmr_data_by_puuid).parameters.flatten - %i[req opt
+                                                                                    key]).count).to eq(3)
     end
 
     it 'is a MMRV1 object' do
@@ -35,7 +35,7 @@ RSpec.describe Valorant::MMRStats do
 
   describe '#mmr_history', mmr_history: true do
     it 'takes 3 parameters' do
-      expect((Valorant::MMRStats.allocate.method(:mmr_history).parameters.flatten - %i[req opt key]).count).to eq(3)
+      expect((Valorant::MMRStats.method(:mmr_history).parameters.flatten - %i[req opt key]).count).to eq(3)
     end
 
     it 'is a MMRHistory object' do
@@ -53,8 +53,8 @@ RSpec.describe Valorant::MMRStats do
 
   describe '#mmr_history_by_puuid', mmr_history_by_puuid: true do
     it 'takes 2 parameters' do
-      expect((Valorant::MMRStats.allocate.method(:mmr_history_by_puuid).parameters.flatten - %i[req opt
-                                                                                                key]).count).to eq(2)
+      expect((Valorant::MMRStats.method(:mmr_history_by_puuid).parameters.flatten - %i[req opt
+                                                                                       key]).count).to eq(2)
     end
 
     it 'is a MMRHistory object' do
