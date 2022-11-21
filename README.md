@@ -1,4 +1,4 @@
-# Valorant ![GitHub Workflow Status (event)](https://img.shields.io/github/workflow/status/jaredthejellyfish/ruby-hendriks-val/CI?event=push&label=CI&style=flat) ![Gem](https://img.shields.io/gem/v/valorant?style=flat) ![Gem](https://img.shields.io/gem/dt/valorant) ![GitHub last commit](https://img.shields.io/github/last-commit/jaredthejellyfish/ruby-hendriks-val)
+# Valorant ![GitHub Workflow Status (event)](https://img.shields.io/github/workflow/status/jaredthejellyfish/ruby-hendriks-val/CI?event=push&label=CI&style=flat) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/jaredthejellyfish/ruby-hendriks-val/CodeQL?label=CodeQL) ![Gem](https://img.shields.io/gem/v/valorant?style=flat) ![Gem](https://img.shields.io/gem/dt/valorant) ![GitHub last commit](https://img.shields.io/github/last-commit/jaredthejellyfish/ruby-hendriks-val) 
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/valorant`. To experiment with that code, run `bin/console` for an interactive prompt.
 
