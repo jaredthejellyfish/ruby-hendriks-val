@@ -31,25 +31,25 @@ end
 namespace :api do
   desc 'Run rspec on api/match.rb'
   RSpec::Core::RakeTask.new(:match) do |t|
-    t.rspec_opts = ' --require helpers/bonus_formatter.rb --format BonusFormatter'
+    t.rspec_opts = ' --require utils/helpers/bonus_formatter.rb --format BonusFormatter'
     t.pattern = 'spec/valorant/api_match_spec.rb'
   end
 
   desc 'Run rspec on api/account.rb'
   RSpec::Core::RakeTask.new(:account) do |t|
-    t.rspec_opts = ' --require helpers/bonus_formatter.rb --format BonusFormatter'
+    t.rspec_opts = ' --require utils/helpers/bonus_formatter.rb --format BonusFormatter'
     t.pattern = 'spec/valorant/api_account_spec.rb'
   end
 
   desc 'Run rspec on api/misc.rb'
   RSpec::Core::RakeTask.new(:misc) do |t|
-    t.rspec_opts = ' --require helpers/bonus_formatter.rb --format BonusFormatter'
+    t.rspec_opts = ' --require utils/helpers/bonus_formatter.rb --format BonusFormatter'
     t.pattern = 'spec/valorant/api_misc_spec.rb'
   end
 
   desc 'Run rspec on api/mmr.rb'
   RSpec::Core::RakeTask.new(:mmr) do |t|
-    t.rspec_opts = ' --require helpers/bonus_formatter.rb --format BonusFormatter'
+    t.rspec_opts = ' --require utils/helpers/bonus_formatter.rb --format BonusFormatter'
     t.pattern = 'spec/valorant/api_mmr_spec.rb'
   end
 end
