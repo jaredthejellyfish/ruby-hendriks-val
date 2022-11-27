@@ -10,6 +10,12 @@ class MatcheshHistory
     @matches = fetch_matches(hash['data'])
   end
 
+  def accuracy(name, tag)
+    @matches.each do |match|
+      match.accuracy(name, tag)
+    end
+  end
+
   private
 
   def fetch_matches(matches_json)

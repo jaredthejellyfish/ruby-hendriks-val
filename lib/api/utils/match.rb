@@ -33,6 +33,10 @@ class Match
     @blue_team.max_by(&:score)
   end
 
+  def accuracy(name, tag)
+    @all_players.select { |player| player.name == name && player.tag == tag }
+  end
+
   def fetch_game_info
     @game_version = @meta_data['game_version']
     @game_start_patched = @meta_data['game_start_patched']

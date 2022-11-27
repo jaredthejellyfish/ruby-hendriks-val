@@ -26,6 +26,10 @@ class Player
     (@kills.to_f / @deaths).round(2)
   end
 
+  def accuracy
+    [@headshots, @bodyshots, @legshots]
+  end
+
   private
 
   def fetch_general_data

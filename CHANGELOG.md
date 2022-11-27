@@ -1,11 +1,11 @@
-## [Unreleased]
+## [0.1.2] - 2022-11-21
 
-## [0.1.0] - 2022-11-16
+- Minor bug fixes and improvements
 
-- Initial release
+## [0.1.3] - 2022-11-21
 
-## [Unreleased]
+- Minor bug fixes and improvements
 
-## [0.1.1] - 2022-11-21
+## [0.1.4] - 2022-11-27
 
-- Added spec files for all utilities in the valorant module.
+- Added ".accuracy" method
