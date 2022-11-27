@@ -11,9 +11,19 @@ class MatcheshHistory
   end
 
   def accuracy(name, tag)
+    body_shots = 0
+    head_shots = 0
+    leg_shots = 0
+
     @matches.each do |match|
-      match.accuracy(name, tag)
+      headshots, bodyshots, legshots = match.accuracy(name, tag)
+
+      head_shots += headshots
+      body_shots += bodyshots
+      leg_shots += legshots
     end
+
+    [head_shots, body_shots, leg_shots]
   end
 
   private
