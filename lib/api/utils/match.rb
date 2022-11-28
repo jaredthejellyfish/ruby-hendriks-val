@@ -38,6 +38,12 @@ class Match
     [result[0].headshots, result[0].bodyshots, result[0].legshots]
   end
 
+  def player(name, tag)
+    @all_players.select { |player| player.name.gsub(' ', '') == name.gsub(' ', '') && player.tag == tag }
+  end
+
+  private
+
   def fetch_game_info
     @game_version = @meta_data['game_version']
     @game_start_patched = @meta_data['game_start_patched']
