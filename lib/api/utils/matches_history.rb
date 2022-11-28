@@ -30,7 +30,7 @@ class MatcheshHistory
     most_played = []
     @matches.each do |match|
       match.all_players.each do |player|
-        next unless player.name == name && player.tag == tag
+        next unless player.name.gsub(' ', '') == name.gsub(' ', '') && player.tag == tag
 
         most_played << player.character
       end

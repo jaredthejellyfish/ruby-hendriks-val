@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    valorant (0.1.4)
+    valorant (0.1.5)
       fast_jsonparser
       rest-client
 
