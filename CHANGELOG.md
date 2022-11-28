@@ -9,3 +9,7 @@
 ## [0.1.4] - 2022-11-27
 
 - Added ".accuracy" method
+
+## [0.1.5] - 2022-11-28
+
+- Added functionality to Misc.content

@@ -47,14 +47,14 @@ class Player
   def fetch_aesthetics_data
     @player_card = @data['player_card']
     @player_title = @data['player_title']
-    @assets_card = keys_to_sim(@data['assets']['card']) # This is a hash
-    @assets_agent = keys_to_sim(@data['assets']['agent']) # This is a hash
+    @assets_card = keys_to_sym(@data['assets']['card']) # This is a hash
+    @assets_agent = keys_to_sym(@data['assets']['agent']) # This is a hash
   end
 
   def fetch_session_data
     @session_playtime = @data['session_playtime']['seconds'].to_i
-    @behavior = keys_to_sim(@data['behavior']) # This is a hash
-    @ability_casts = keys_to_sim(@data['ability_casts']) # This is a hash
+    @behavior = keys_to_sym(@data['behavior']) # This is a hash
+    @ability_casts = keys_to_sym(@data['ability_casts']) # This is a hash
   end
 
   def fetch_performance_data
@@ -85,7 +85,7 @@ class Player
     "#{platform["tpye"]} #{platform["os"].values.join(" ")}"
   end
 
-  def keys_to_sim(hash)
+  def keys_to_sym(hash)
     hash.transform_keys(&:to_sym)
   end
 end

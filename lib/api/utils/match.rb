@@ -34,8 +34,8 @@ class Match
   end
 
   def accuracy(name, tag)
-    player = @all_players.select { |player| player.name.gsub(' ', '') == name.gsub(' ', '') && player.tag == tag }
-    [player[0].headshots, player[0].bodyshots, player[0].legshots]
+    result = @all_players.select { |player| player.name.gsub(' ', '') == name.gsub(' ', '') && player.tag == tag }
+    [result[0].headshots, result[0].bodyshots, result[0].legshots]
   end
 
   def fetch_game_info

@@ -26,6 +26,18 @@ class MatcheshHistory
     [head_shots, body_shots, leg_shots]
   end
 
+  def most_played(name, tag)
+    most_played = []
+    @matches.each do |match|
+      match.all_players.each do |player|
+        next unless player.name == name && player.tag == tag
+
+        most_played << player.character
+      end
+    end
+    most_played.max_by { |i| most_played.count(i) }
+  end
+
   private
 
   def fetch_matches(matches_json)

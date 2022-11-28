@@ -3,6 +3,7 @@
 require_relative 'utils/articles'
 require_relative 'utils/leader_board'
 require_relative 'utils/utilities'
+require_relative 'utils/content'
 
 module Valorant
   # This class is used to fetch data from the Valorant API -> ENDPOINTS: /v1/website/, /v1/leaderboard/,
@@ -17,7 +18,7 @@ module Valorant
     end
 
     def self.content
-      fetch_resposne('v1/content')
+      Content.new(fetch_resposne('v1/content'))
     end
 
     def self.server_status(region)

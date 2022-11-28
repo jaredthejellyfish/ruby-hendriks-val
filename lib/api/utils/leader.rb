@@ -23,17 +23,3 @@ class Leader
     @is_anonymized = data['IsAnonymized']
   end
 end
-
-# DOCUMENTATION
-
-# @PlayerCardID
-# @TitleID
-# @IsBanned
-# @IsAnonymized
-# @puuid
-# @gameName
-# @tagLine
-# @leaderboardRank
-# @rankedRating
-# @numberOfWins
-# @competitiveTier
